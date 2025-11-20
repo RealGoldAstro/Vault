@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CCTFF · Leaderboard Tag API index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <aside class="sidebar no-scrollbar">
+        <div class="sidebar-inner">
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="sidebar-logo-text">
+                    <div class="sidebar-logo-title">CCTFF Docs</div>
+                    <div class="sidebar-logo-subtitle">Chat formatting framework</div>
+                </div>
+            </div>
+
+            <div class="sidebar-nav-section" style="margin-top:0.9rem;">
+                <div class="nav-parent-row">
+                    <a href="index.html" class="nav-link-parent">Overview</a>
+                </div>
+
+                <div class="nav-parent-row" data-toggle="cctff-main">
+                    <a href="cctff.html" class="nav-link-parent">CCTFF</a>
+                    <i class="fas fa-chevron-right nav-chevron open"></i>
+                </div>
+                <ul id="cctff-main" class="nav-list nav-children">
+                    <li class="nav-item">
+                        <a href="cctff.html" class="nav-child-link">Overview</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="tags-sub">
+                            <a href="tags.html" class="nav-link-parent">Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="tags-sub" class="nav-children hidden">
+                            <li class="nav-item">
+                                <a href="tags.html" class="nav-child-link">Tag API index</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="tags-give.html" class="nav-child-link">TagAPI:Give</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="leaderboard-sub">
+                            <a href="leaderboard.html" class="nav-link-parent active">Leaderboard Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron open"></i>
+                        </div>
+                        <ul id="leaderboard-sub" class="nav-children">
+                            <li class="nav-item">
+                                <a href="leaderboard.html" class="nav-child-link active">Leaderboard Tag API index</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="system-sub">
+                            <a href="system.html" class="nav-link-parent">System Messages</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="system-sub" class="nav-children hidden">
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">System Message API index</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <main class="content-wrapper">
+        <div class="content-inner">
+            <header>
+                <h1>Leaderboard Tags API index</h1>
+                <p>
+                    Leaderboard tags let you attach dynamic text to leaderboard entries, such as streaks or season ranks.
+                    These helper methods all live on <code>TagAPI</code>.
+                </p>
+            </header>
+
+            <section>
+                <h2>Leaderboard methods</h2>
+
+                <div class="card-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                    <div class="card">
+                        <h3><code>TagAPI:GiveLeaderboardTag</code></h3>
+                        <p>Give a leaderboard tag with dynamic text.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><code>TagAPI:UpdateLeaderboardTag</code></h3>
+                        <p>Update the dynamic text for an existing leaderboard tag.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><code>TagAPI:RemoveLeaderboardTag</code></h3>
+                        <p>Remove a leaderboard tag from a player.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><code>TagAPI:GetLeaderboardTagText</code></h3>
+                        <p>Read the current dynamic text for a leaderboard tag.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script>
+    if (window.hljs) hljs.highlightAll();
+
+    document.querySelectorAll('.nav-parent-row').forEach(row => {
+        const id = row.getAttribute('data-toggle');
+        const target = id ? document.getElementById(id) : null;
+        const chevron = row.querySelector('.nav-chevron');
+
+        row.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') return;
+            if (!target) return;
+            const hidden = target.classList.contains('hidden');
+            target.classList.toggle('hidden', !hidden);
+            if (chevron) chevron.classList.toggle('open', hidden);
+        });
+    });
+</script>
+</body>
+</html>
