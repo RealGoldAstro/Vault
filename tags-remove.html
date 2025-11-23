@@ -204,13 +204,30 @@
       The <code>TagAPI:Remove</code> method removes a tag from a player. This method is server-side only and requires the CCTFF framework to be properly initialized. Use this to revoke permissions, update player status, or remove expired tags.
     </p>
 
-    <h2>Overview</h2>
-    <p>
-      <strong>Where it fires:</strong> Server-side only (ServerScriptService, ServerStorage scripts)<br>
-      <strong>When to use:</strong> When you need to remove tags from players due to role changes, subscription expiration, punishment, or game state changes<br>
-      <strong>Returns:</strong> void (no return value)<br>
-      <strong>Side effects:</strong> Fires replication to client, updates player's tag collection, triggers any tag-related UI updates
-    </p>
+<!-- OVERVIEW: Core API information -->
+<h2>Overview</h2>
+<div class="overview-grid">
+  <div class="overview-item">
+    <div class="overview-label">Server/Client</div>
+    <div class="overview-value">Server-side only</div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">Script Types</div>
+    <div class="overview-value">Script, ModuleScript</div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">Returns</div>
+    <div class="overview-value"><code>boolean</code>, <code>string</code></div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">What It Does</div>
+    <div class="overview-value">Removes a tag from a player. If the tag is equipped, it will be automatically unequipped.</div>
+  </div>
+</div>
+
 
     <h2>Syntax</h2>
     <div class="code-block-wrapper">
