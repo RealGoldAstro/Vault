@@ -141,7 +141,6 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
     color: var(--text-main);
 }
 
@@ -384,6 +383,7 @@ code {
         padding: 1.8rem 1.4rem 2.5rem;
     }
 }
+
 
 
 
