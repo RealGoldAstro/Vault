@@ -195,75 +195,449 @@
 
     <!-- Main content -->
     <main class="content-wrapper">
-        <div class="content-inner">
-            <header>
-                <h1>TagAPI:PlaceGolder</h1>
-                <p>
-                    <code>TagAPI:Give</code> grants a tag to a player. If the player already owns the tag,
-                    the call is ignored and no duplicate is created.
-                </p>
-            </header>
+  <div class="content-inner">
+    <h1>TagAPI:Give</h1>
+    <p>
+      The <code>TagAPI:Give</code> method assigns a tag to a player. This method is server-side only and requires the CCTFF framework to be properly initialized. Tags are defined in your CCTFF configuration and can be used for roles, permissions, visual indicators, or player categorization.
+    </p>
 
-            <section>
-                <h2>Syntax</h2>
-                <pre><code class="language-lua">
-TagAPI:Give(player: Player, tagId: string)
-                </code></pre>
-            </section>
+    <h2>Overview</h2>
+    <p>
+      <strong>Where it fires:</strong> Server-side only (ServerScriptService, ServerStorage scripts)<br>
+      <strong>When to use:</strong> When you need to assign tags to players based on game events, purchases, achievements, or administrative actions<br>
+      <strong>Returns:</strong> void (no return value)<br>
+      <strong>Side effects:</strong> Fires replication to client, updates player's tag collection, triggers any tag-related UI updates
+    </p>
 
-            <section>
-                <h2>Parameters</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Parameter</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>player</code></td>
-                            <td><code>Player</code></td>
-                            <td>The player who should receive the tag.</td>
-                        </tr>
-                        <tr>
-                            <td><code>tagId</code></td>
-                            <td><code>string</code></td>
-                            <td>The tag identifier defined in your CCTFF config.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+    <h2>Syntax</h2>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>TagAPI:Give(player: Player, tagId: string)</code></pre>
+    </div>
 
-            <section>
-                <h2>Basic example</h2>
-                <pre><code class="language-lua">
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    <h2>Parameters</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>player</code></td>
+          <td><code>Player</code></td>
+          <td>The player instance who should receive the tag</td>
+        </tr>
+        <tr>
+          <td><code>tagId</code></td>
+          <td><code>string</code></td>
+          <td>The tag identifier as defined in your CCTFF config</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Basic Usage</h2>
+    <p>Give a single tag to a player when they join the game.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CCTFF = require(ReplicatedStorage:WaitForChild("CCTFF"))
-
 local TagAPI = CCTFF.TagAPI
 
 game.Players.PlayerAdded:Connect(function(player)
-    TagAPI:Give(player, "Dev")
-end)
-                </code></pre>
-            </section>
+    TagAPI:Give(player, "Newcomer")
+end)</code></pre>
+    </div>
 
-            <section>
-                <h2>Giving multiple tags</h2>
-                <pre><code class="language-lua">
-local tagsToGive = { "Dev", "Tester", "VIP" }
+    <h2>Multiple Tags at Once</h2>
+    <p>Assign multiple tags to a player using a loop.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local tagsToGive = {"VIP", "EarlySupporter", "BetaTester"}
 
 game.Players.PlayerAdded:Connect(function(player)
     for _, tagId in ipairs(tagsToGive) do
         TagAPI:Give(player, tagId)
     end
-end)
-                </code></pre>
-            </section>
-        </div>
-    </main>
+end)</code></pre>
+    </div>
+
+    <h2>Conditional Tag Assignment</h2>
+    <p>Give tags based on player data, such as user ID or group membership.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local adminUserIds = {123456, 789012, 345678}
+
+game.Players.PlayerAdded:Connect(function(player)
+    if table.find(adminUserIds, player.UserId) then
+        TagAPI:Give(player, "Admin")
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Group Rank Based Tags</h2>
+    <p>Assign tags based on player's rank in a Roblox group.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local GROUP_ID = 123456
+
+game.Players.PlayerAdded:Connect(function(player)
+    local rank = player:GetRankInGroup(GROUP_ID)
+    
+    if rank >= 250 then
+        TagAPI:Give(player, "Owner")
+    elseif rank >= 200 then
+        TagAPI:Give(player, "Admin")
+    elseif rank >= 100 then
+        TagAPI:Give(player, "Moderator")
+    elseif rank >= 1 then
+        TagAPI:Give(player, "Member")
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Achievement-Based Tags</h2>
+    <p>Award tags when players complete achievements or milestones.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local function onPlayerReachedLevel(player, level)
+    if level >= 100 then
+        TagAPI:Give(player, "Centurion")
+    elseif level >= 50 then
+        TagAPI:Give(player, "Veteran")
+    elseif level >= 10 then
+        TagAPI:Give(player, "Explorer")
+    end
+end
+
+-- Connect to your leveling system
+player.leaderstats.Level.Changed:Connect(function(newLevel)
+    onPlayerReachedLevel(player, newLevel)
+end)</code></pre>
+    </div>
+
+    <h2>Purchase-Based Tags</h2>
+    <p>Give tags when players purchase products or game passes.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local MarketplaceService = game:GetService("MarketplaceService")
+
+MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, gamePassId, wasPurchased)
+    if wasPurchased then
+        if gamePassId == 12345 then
+            TagAPI:Give(player, "VIP")
+        elseif gamePassId == 67890 then
+            TagAPI:Give(player, "Premium")
+        end
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Time-Based Tags</h2>
+    <p>Award tags based on player playtime or session duration.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local PLAYTIME_THRESHOLD = 3600 -- 1 hour in seconds
+
+game.Players.PlayerAdded:Connect(function(player)
+    local joinTime = os.time()
+    
+    task.wait(PLAYTIME_THRESHOLD)
+    
+    if player and player.Parent then
+        TagAPI:Give(player, "Dedicated")
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Event-Based Tags</h2>
+    <p>Assign limited-time event tags to all players during special occasions.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local currentDate = os.date("*t")
+local isHolidayEvent = currentDate.month == 12 and currentDate.day >= 20
+
+game.Players.PlayerAdded:Connect(function(player)
+    if isHolidayEvent then
+        TagAPI:Give(player, "HolidayParticipant")
+    end
+end)</code></pre>
+    </div>
+
+    <h2>DataStore Integration</h2>
+    <p>Load and apply saved tags from DataStore when player joins.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local DataStoreService = game:GetService("DataStoreService")
+local playerDataStore = DataStoreService:GetDataStore("PlayerTags")
+
+game.Players.PlayerAdded:Connect(function(player)
+    local success, savedTags = pcall(function()
+        return playerDataStore:GetAsync(player.UserId)
+    end)
+    
+    if success and savedTags then
+        for _, tagId in ipairs(savedTags) do
+            TagAPI:Give(player, tagId)
+        end
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Command System Integration</h2>
+    <p>Allow administrators to give tags via commands.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local function giveTagCommand(admin, targetPlayerName, tagId)
+    local targetPlayer = game.Players:FindFirstChild(targetPlayerName)
+    
+    if targetPlayer then
+        TagAPI:Give(targetPlayer, tagId)
+        return true, "Tag given successfully!"
+    else
+        return false, "Player not found"
+    end
+end
+
+-- Example command handler
+adminCommands["givetag"] = giveTagCommand</code></pre>
+    </div>
+
+    <h2>Leaderboard-Based Tags</h2>
+    <p>Award tags to top players on the leaderboard.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local function updateLeaderboardTags()
+    local players = game.Players:GetPlayers()
+    
+    table.sort(players, function(a, b)
+        return a.leaderstats.Points.Value > b.leaderstats.Points.Value
+    end)
+    
+    -- Top 3 players get special tags
+    if players[1] then
+        TagAPI:Give(players[1], "Champion")
+    end
+    if players[2] then
+        TagAPI:Give(players[2], "RunnerUp")
+    end
+    if players[3] then
+        TagAPI:Give(players[3], "ThirdPlace")
+    end
+end
+
+-- Update every 5 minutes
+while true do
+    updateLeaderboardTags()
+    task.wait(300)
+end</code></pre>
+    </div>
+
+    <h2>Premium Subscription Tags</h2>
+    <p>Give tags to Roblox Premium subscribers.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>game.Players.PlayerAdded:Connect(function(player)
+    if player.MembershipType == Enum.MembershipType.Premium then
+        TagAPI:Give(player, "PremiumMember")
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Badge-Based Tags</h2>
+    <p>Award tags when players earn specific badges.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local BadgeService = game:GetService("BadgeService")
+local BADGE_ID = 123456789
+
+game.Players.PlayerAdded:Connect(function(player)
+    local success, hasBadge = pcall(function()
+        return BadgeService:UserHasBadgeAsync(player.UserId, BADGE_ID)
+    end)
+    
+    if success and hasBadge then
+        TagAPI:Give(player, "BadgeCollector")
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Team-Based Tags</h2>
+    <p>Assign tags when players join specific teams.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>game.Players.PlayerAdded:Connect(function(player)
+    player:GetPropertyChangedSignal("Team"):Connect(function()
+        local team = player.Team
+        
+        if team then
+            if team.Name == "Red" then
+                TagAPI:Give(player, "RedTeamMember")
+            elseif team.Name == "Blue" then
+                TagAPI:Give(player, "BlueTeamMember")
+            end
+        end
+    end)
+end)</code></pre>
+    </div>
+
+    <h2>Friend-Based Tags</h2>
+    <p>Give tags to players who are friends with specific users.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local DEVELOPER_USER_ID = 123456
+
+game.Players.PlayerAdded:Connect(function(player)
+    local success, isFriend = pcall(function()
+        return player:IsFriendsWith(DEVELOPER_USER_ID)
+    end)
+    
+    if success and isFriend then
+        TagAPI:Give(player, "FriendOfDev")
+    end
+end)</code></pre>
+    </div>
+
+    <h2>Stat Threshold Tags</h2>
+    <p>Award tags when player stats reach certain thresholds.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local function checkStatTags(player)
+    local coins = player.leaderstats.Coins.Value
+    
+    if coins >= 1000000 then
+        TagAPI:Give(player, "Millionaire")
+    elseif coins >= 100000 then
+        TagAPI:Give(player, "Wealthy")
+    elseif coins >= 10000 then
+        TagAPI:Give(player, "Prosperous")
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.leaderstats.Coins.Changed:Connect(function()
+        checkStatTags(player)
+    end)
+end)</code></pre>
+    </div>
+
+    <h2>Referral System Tags</h2>
+    <p>Give tags to players who refer others to the game.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local function onPlayerReferred(referrer, referralCount)
+    if referralCount >= 10 then
+        TagAPI:Give(referrer, "Ambassador")
+    elseif referralCount >= 5 then
+        TagAPI:Give(referrer, "Recruiter")
+    elseif referralCount >= 1 then
+        TagAPI:Give(referrer, "Inviter")
+    end
+end
+
+-- Connect to your referral tracking system
+ReferralSystem.PlayerReferred:Connect(onPlayerReferred)</code></pre>
+    </div>
+
+    <h2>Combat Achievement Tags</h2>
+    <p>Award tags based on combat statistics and kills.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local function onPlayerKill(player, kills)
+    if kills >= 1000 then
+        TagAPI:Give(player, "Legendary")
+    elseif kills >= 500 then
+        TagAPI:Give(player, "Elite")
+    elseif kills >= 100 then
+        TagAPI:Give(player, "Veteran")
+    elseif kills >= 10 then
+        TagAPI:Give(player, "Fighter")
+    end
+end
+
+-- Connect to your combat system
+CombatSystem.PlayerKilled:Connect(onPlayerKill)</code></pre>
+    </div>
+
+    <h2>Season Pass Tags</h2>
+    <p>Assign tags to players who own the current season pass.</p>
+    <div class="code-block-wrapper">
+      <div class="code-block-header">
+        <span>lua</span>
+        <button class="copy-btn">Copy</button>
+      </div>
+      <pre><code>local SEASON_PASS_PRODUCT_ID = 123456
+
+game.Players.PlayerAdded:Connect(function(player)
+    local ownsPass = MarketplaceService:UserOwnsGamePassAsync(player.UserId, SEASON_PASS_PRODUCT_ID)
+    
+    if ownsPass then
+        TagAPI:Give(player, "SeasonPassHolder")
+    end
+end)</code></pre>
+    </div>
+
+  </div>
+</main>
 </div>
 
 <script>
@@ -286,4 +660,5 @@ end)
 </script>
 </body>
 </html>
+
 
