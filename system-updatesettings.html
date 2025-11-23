@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Message · Update Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <!-- Add favicon here -->
+    <link rel="icon" type="image/png" href="Assets/Logo.png">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Highlight.js (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Sidebar -->
+ <aside class="sidebar no-scrollbar">
+        <div class="sidebar-inner">
+
+            <!-- Logo / title -->
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <img src="Assets/Logo.png" alt="Logo">
+                </div>
+                <div class="sidebar-logo-text">
+                    <div class="sidebar-logo-title">Vault Docs</div>
+                    <div class="sidebar-logo-subtitle">Versatile Asset Utility Library Tools</div>
+                </div>
+            </div>
+
+            <!-- Nav -->
+            <div class="sidebar-nav-section" style="margin-top:0.9rem;">
+                <!-- Overview -->
+                <div class="nav-parent-row">
+                    <a href="index.html" class="nav-link-parent">Overview</a>
+                </div>
+
+                <!-- CCTFF group -->
+                <div class="nav-parent-row" data-toggle="cctff-main">
+                    <a href="cctff.html" class="nav-link-parent">CCTFF</a>
+                    <i class="fas fa-chevron-right nav-chevron open"></i>
+                </div>
+                <ul id="cctff-main" class="nav-list nav-children">
+                    <li class="nav-item">
+                        <a href="cctff.html" class="nav-child-link">Overview</a>
+                    </li>
+
+                    <!-- Tags group (this page) -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="tags-sub">
+                            <a href="tags.html" class="nav-link-parent">Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="tags-sub" class="nav-children hidden">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="tags.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give -->
+                            <li class="nav-item">
+                                <a href="tags-give.html" class="nav-child-link">TagAPI:Give</a>
+                            </li>
+
+                            <!-- Remove -->
+                            <li class="nav-item">
+                                <a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a>
+                            </li>
+
+                            <!-- Equip -->
+                            <li class="nav-item">
+                                <a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a>
+                            </li>
+                            
+                            <!-- Unequip -->
+                            <li class="nav-item">
+                                <a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a>
+                            </li>
+
+                            <!-- Get Owned -->
+                            <li class="nav-item">
+                                <a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a>
+                            </li>
+
+                            <!-- Get Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a>
+                            </li>
+
+                            <!-- Has Tag -->
+                            <li class="nav-item">
+                                <a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a>
+                            </li>
+
+                            <!-- Is Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-isequipped.html" class="nav-child-link">TagAPI:IsEquipped</a>
+                            </li>
+
+                            <!-- Clear All -->
+                            <li class="nav-item">
+                                <a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a>
+                            </li>
+                            
+                            <!-- Unequip All -->
+                            <li class="nav-item">
+                                <a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a>
+                            </li>
+
+                            <!-- Get Max Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a>
+                            </li>
+
+                            <!-- Get Available Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getavailableslots.html" class="nav-child-link">TagAPI:GetAvailableSlots</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Leaderboard Tags -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="leaderboard-sub">
+                            <a href="leaderboard.html" class="nav-link-parent">Leaderboard Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="leaderboard-sub" class="nav-children hidden">
+                            
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="leaderboard.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-givetag.html" class="nav-child-link">TagAPI:GiveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Update Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a>
+                            </li>
+
+                            <!-- Remove Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Get Leaderbaord Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- System Messages -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="system-sub">
+                            <a href="system.html" class="nav-link-parent active">System Messages</a>
+                            <i class="fas fa-chevron-right nav-chevron open"></i>
+                        </div>
+                        <ul id="system-sub" class="nav-children">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Send System Message -->
+                            <li class="nav-item">
+                                <a href="system-sendmessage.html" class="nav-child-link">TagAPI:SendSystemMessage</a>
+                            </li>
+
+                            <!-- Update Client Settings -->
+                            <li class="nav-item">
+                                <a href="system-updatesettings.html" class="nav-child-link active">TagAPI:UpdateClientSettings</a>
+                            </li>
+
+                            <!-- Is System Message Enabled -->
+                            <li class="nav-item">
+                                <a href="system-messageenabled.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <!-- Main content -->
+<main class="content-wrapper">
+    <div class="content-inner">
+        <h1>TagAPI:UpdateClientSettings</h1>
+        <p>The <code>TagAPI:UpdateClientSettings</code> method updates a player's system message visibility preferences. Players can enable or disable specific system message types, giving them control over which notifications they receive.</p>
+        <h2>Overview</h2>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="overview-label">Execution Context</div>
+                <div class="overview-value"><code>Server</code>, <code>Client</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Script Type</div>
+                <div class="overview-value">Server Script, Local Script</div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Returns</div>
+                <div class="overview-value"><code>boolean</code>, <code>string</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Side Effects</div>
+                <div class="overview-value">Updates player's message preferences</div>
+            </div>
+        </div>
+
+        <h2>Syntax</h2>
+        <p><code>local success, message = TagAPI:UpdateClientSettings(player: Player, preferences: table)</code></p>
+
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>player</code></td>
+                    <td><code>Player</code></td>
+                    <td>The player whose settings should be updated</td>
+                </tr>
+                <tr>
+                    <td><code>preferences</code></td>
+                    <td><code>table</code></td>
+                    <td>Dictionary with message names as keys and boolean values (true = enabled, false = disabled)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Return Values</h2>
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Return</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>success</code></td>
+                    <td><code>boolean</code></td>
+                    <td>True if settings were updated successfully, false otherwise</td>
+                </tr>
+                <tr>
+                    <td><code>message</code></td>
+                    <td><code>string</code></td>
+                    <td>Descriptive message about the operation result</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Basic Usage</h2>
+        <p>Update a player's message preferences.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CCTFF = require(ReplicatedStorage:WaitForChild("CCTFF"))
+local TagAPI = CCTFF.TagAPI
+
+local preferences = {
+    ["ServerRestart"] = true,  -- Enable
+    ["GameTip"] = false,       -- Disable
+    ["EventStart"] = true      -- Enable
+}
+
+local success, msg = TagAPI:UpdateClientSettings(player, preferences)
+if success then
+    print("Settings updated")
+else
+    print("Error: " .. msg)
+end</code></pre>
+        </div>
+
+        <h2>Disable All Tips</h2>
+        <p>Turn off all tip messages for a player.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function disableAllTips(player)
+    local tipMessages = {
+        "GameTip",
+        "DailyTip",
+        "ProTip",
+        "BeginnerTip"
+    }
+    
+    local prefs = {}
+    for _, tipName in ipairs(tipMessages) do
+        prefs[tipName] = false
+    end
+    
+    TagAPI:UpdateClientSettings(player, prefs)
+    print("Disabled all tips for " .. player.Name)
+end
+
+disableAllTips(player)</code></pre>
+        </div>
+
+        <h2>Settings Menu UI</h2>
+        <p>Create a settings menu for players to control messages.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>-- LocalScript
+local player = game.Players.LocalPlayer
+local TagAPI = require(game.ReplicatedStorage.CustomChatTagsClientAPI)
+
+local MESSAGE_CATEGORIES = {
+    {name = "ServerRestart", label = "Server Restart Warnings"},
+    {name = "EventStart", label = "Event Notifications"},
+    {name = "GameTip", label = "Gameplay Tips"},
+    {name = "Achievement", label = "Achievement Broadcasts"},
+    {name = "PlayerJoin", label = "Player Join Messages"}
+}
+
+-- Create toggle buttons for each message type
+local function createSettingsUI()
+    local currentPrefs = {}
+    
+    for _, category in ipairs(MESSAGE_CATEGORIES) do
+        local checkbox = script.Parent:FindFirstChild(category.name .. "Toggle")
+        
+        if checkbox then
+            checkbox.MouseButton1Click:Connect(function()
+                local newState = not checkbox.Selected
+                checkbox.Selected = newState
+                
+                currentPrefs[category.name] = newState
+                TagAPI:UpdateClientSettings(currentPrefs)
+                
+                print("Updated " .. category.name .. " to " .. tostring(newState))
+            end)
+        end
+    end
+end
+
+createSettingsUI()</code></pre>
+        </div>
+
+        <h2>VIP Message Preferences</h2>
+        <p>Give VIP players more control over messages.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function setupVIPPreferences(player)
+    if not TagAPI:HasTag(player, "VIP") then
+        return false, "Not a VIP player"
+    end
+    
+    -- VIPs get all announcements disabled by default
+    local vipPrefs = {
+        ["GameTip"] = false,
+        ["PlayerJoin"] = false,
+        ["ShopUpdate"] = false,
+        ["ServerLoad"] = false
+    }
+    
+    TagAPI:UpdateClientSettings(player, vipPrefs)
+    print("VIP preferences applied for " .. player.Name)
+    
+    return true
+end
+
+setupVIPPreferences(player)</code></pre>
+        </div>
+
+        <h2>Save Preferences</h2>
+        <p>Persist player message preferences with DataStore.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local DataStoreService = game:GetService("DataStoreService")
+local prefsStore = DataStoreService:GetDataStore("MessagePreferences")
+
+local function savePreferences(player, preferences)
+    local success, err = pcall(function()
+        prefsStore:SetAsync(player.UserId, preferences)
+    end)
+    
+    if success then
+        TagAPI:UpdateClientSettings(player, preferences)
+        return true, "Preferences saved"
+    else
+        return false, "Failed to save: " .. err
+    end
+end
+
+local function loadPreferences(player)
+    local success, prefs = pcall(function()
+        return prefsStore:GetAsync(player.UserId)
+    end)
+    
+    if success and prefs then
+        TagAPI:UpdateClientSettings(player, prefs)
+        print("Loaded preferences for " .. player.Name)
+    end
+end
+
+game.Players.PlayerAdded:Connect(loadPreferences)</code></pre>
+        </div>
+
+        <h2>Toggle Single Message</h2>
+        <p>Toggle a specific message type on or off.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function toggleMessageType(player, messageName, enabled)
+    local prefs = {
+        [messageName] = enabled
+    }
+    
+    local success, msg = TagAPI:UpdateClientSettings(player, prefs)
+    
+    if success then
+        local state = enabled and "enabled" or "disabled"
+        print(messageName .. " " .. state .. " for " .. player.Name)
+    end
+    
+    return success, msg
+end
+
+-- Enable server restart messages
+toggleMessageType(player, "ServerRestart", true)
+
+-- Disable tips
+toggleMessageType(player, "GameTip", false)</code></pre>
+        </div>
+
+        <h2>Preset Profiles</h2>
+        <p>Allow players to choose from preset notification profiles.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local NOTIFICATION_PROFILES = {
+    All = {
+        ServerRestart = true,
+        EventStart = true,
+        GameTip = true,
+        Achievement = true,
+        PlayerJoin = true,
+        ShopUpdate = true
+    },
+    Important = {
+        ServerRestart = true,
+        EventStart = true,
+        GameTip = false,
+        Achievement = false,
+        PlayerJoin = false,
+        ShopUpdate = false
+    },
+    Minimal = {
+        ServerRestart = true,
+        EventStart = false,
+        GameTip = false,
+        Achievement = false,
+        PlayerJoin = false,
+        ShopUpdate = false
+    },
+    None = {
+        ServerRestart = false,
+        EventStart = false,
+        GameTip = false,
+        Achievement = false,
+        PlayerJoin = false,
+        ShopUpdate = false
+    }
+}
+
+local function setNotificationProfile(player, profileName)
+    local profile = NOTIFICATION_PROFILES[profileName]
+    
+    if not profile then
+        return false, "Invalid profile: " .. profileName
+    end
+    
+    TagAPI:UpdateClientSettings(player, profile)
+    print("Set " .. profileName .. " profile for " .. player.Name)
+    
+    return true
+end
+
+-- Set to "Important" profile
+setNotificationProfile(player, "Important")</code></pre>
+        </div>
+
+        <h2>Command System</h2>
+        <p>Allow players to configure via chat commands.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function handleMessageCommand(player, args)
+    local action = args[1] -- "enable" or "disable"
+    local messageName = args[2]
+    
+    if not action or not messageName then
+        return false, "Usage: /messages [enable/disable] [messageName]"
+    end
+    
+    local enabled = action:lower() == "enable"
+    
+    local prefs = {
+        [messageName] = enabled
+    }
+    
+    local success, msg = TagAPI:UpdateClientSettings(player, prefs)
+    
+    if success then
+        local state = enabled and "enabled" or "disabled"
+        return true, messageName .. " notifications " .. state
+    else
+        return false, msg
+    end
+end
+
+-- Usage: /messages disable GameTip
+-- Usage: /messages enable EventStart</code></pre>
+        </div>
+
+        <h2>Batch Update</h2>
+        <p>Update multiple message preferences at once.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function batchUpdatePreferences(player, updates)
+    local currentPrefs = {} -- Load from storage or cache
+    
+    -- Merge updates into current preferences
+    for messageName, enabled in pairs(updates) do
+        currentPrefs[messageName] = enabled
+    end
+    
+    return TagAPI:UpdateClientSettings(player, currentPrefs)
+end
+
+-- Update multiple at once
+local updates = {
+    GameTip = false,
+    EventStart = true,
+    Achievement = true,
+    PlayerJoin = false
+}
+
+batchUpdatePreferences(player, updates)</code></pre>
+        </div>
+
+        <h2>Default Preferences</h2>
+        <p>Set default preferences for new players.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local DEFAULT_PREFERENCES = {
+    ServerRestart = true,
+    EventStart = true,
+    GameTip = true,
+    Achievement = true,
+    PlayerJoin = true,
+    ShopUpdate = true,
+    MaintenanceWarning = true
+}
+
+game.Players.PlayerAdded:Connect(function(player)
+    task.wait(2) -- Wait for data to load
+    
+    TagAPI:UpdateClientSettings(player, DEFAULT_PREFERENCES)
+    print("Applied default message preferences for " .. player.Name)
+end)</code></pre>
+        </div>
+
+        <h2>Reset to Defaults</h2>
+        <p>Reset player preferences to default state.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function resetToDefaults(player)
+    local defaults = {
+        ServerRestart = true,
+        EventStart = true,
+        GameTip = true,
+        Achievement = true,
+        PlayerJoin = true
+    }
+    
+    local success, msg = TagAPI:UpdateClientSettings(player, defaults)
+    
+    if success then
+        print("Reset preferences for " .. player.Name)
+        return true, "Preferences reset to defaults"
+    else
+        return false, msg
+    end
+end
+
+resetToDefaults(player)</code></pre>
+        </div>
+
+        <h2>Check Current Settings</h2>
+        <p>Retrieve and display current message settings.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function displayCurrentSettings(player)
+    local messageTypes = {
+        "ServerRestart",
+        "EventStart",
+        "GameTip",
+        "Achievement",
+        "PlayerJoin"
+    }
+    
+    print("Message settings for " .. player.Name .. ":")
+    
+    for _, msgType in ipairs(messageTypes) do
+        local enabled = TagAPI:IsSystemMessageEnabled(player, msgType)
+        local status = enabled and "✓ Enabled" or "✗ Disabled"
+        print("  " .. msgType .. ": " .. status)
+    end
+end
+
+displayCurrentSettings(player)</code></pre>
+        </div>
+
+        <h2>Client-Side UI Integration</h2>
+        <p>Full client-side settings panel.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>-- LocalScript
+local player = game.Players.LocalPlayer
+local TagAPI = require(game.ReplicatedStorage.CustomChatTagsClientAPI)
+
+local settingsFrame = script.Parent.SettingsFrame
+local saveButton = settingsFrame.SaveButton
+
+local function saveSettings()
+    local preferences = {}
+    
+    -- Gather checkbox states
+    for _, child in ipairs(settingsFrame:GetChildren()) do
+        if child:IsA("TextButton") and child.Name:match("Toggle$") then
+            local messageName = child.Name:gsub("Toggle", "")
+            preferences[messageName] = child.Selected
+        end
+    end
+    
+    -- Update on server
+    local success, msg = TagAPI:UpdateClientSettings(preferences)
+    
+    if success then
+        saveButton.Text = "✓ Saved!"
+        saveButton.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+        
+        task.wait(2)
+        saveButton.Text = "Save Settings"
+        saveButton.BackgroundColor3 = Color3.fromRGB(70, 130, 180)
+    else
+        saveButton.Text = "Error!"
+        saveButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+    end
+end
+
+saveButton.MouseButton1Click:Connect(saveSettings)</code></pre>
+        </div>
+
+        <h2>Admin Override</h2>
+        <p>Allow admins to force message visibility.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function forceEnableMessages(player, messageList)
+    if not TagAPI:HasTag(player, "Admin") then
+        return false, "Admin only"
+    end
+    
+    local prefs = {}
+    for _, msgName in ipairs(messageList) do
+        prefs[msgName] = true
+    end
+    
+    for _, targetPlayer in ipairs(game.Players:GetPlayers()) do
+        TagAPI:UpdateClientSettings(targetPlayer, prefs)
+    end
+    
+    print("Force-enabled messages for all players")
+    return true
+end
+
+-- Force enable critical messages
+forceEnableMessages(adminPlayer, {"ServerRestart", "MaintenanceWarning"})</code></pre>
+        </div>
+
+        <h2>Export Settings</h2>
+        <p>Export player settings for backup or transfer.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local HttpService = game:GetService("HttpService")
+
+local function exportPlayerSettings(player)
+    local settings = {
+        UserId = player.UserId,
+        Username = player.Name,
+        Preferences = {
+            ServerRestart = TagAPI:IsSystemMessageEnabled(player, "ServerRestart"),
+            EventStart = TagAPI:IsSystemMessageEnabled(player, "EventStart"),
+            GameTip = TagAPI:IsSystemMessageEnabled(player, "GameTip")
+        },
+        ExportedAt = os.time()
+    }
+    
+    local json = HttpService:JSONEncode(settings)
+    return json
+end
+
+local settingsJSON = exportPlayerSettings(player)
+print(settingsJSON)</code></pre>
+        </div>
+    </div>
+</main>
+
+</div>
+
+<script>
+    if (window.hljs) hljs.highlightAll();
+
+    // Sidebar toggles
+    document.querySelectorAll('.nav-parent-row').forEach(row => {
+        const id = row.getAttribute('data-toggle');
+        const target = id ? document.getElementById(id) : null;
+        const chevron = row.querySelector('.nav-chevron');
+
+        row.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') return;
+            if (!target) return;
+
+            const hidden = target.classList.contains('hidden');
+            target.classList.toggle('hidden', !hidden);
+            if (chevron) chevron.classList.toggle('open', hidden);
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
