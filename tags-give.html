@@ -204,45 +204,30 @@
       The <code>TagAPI:Give</code> method assigns a tag to a player. This method is server-side only and requires the CCTFF framework to be properly initialized. Tags are defined in your CCTFF configuration and can be used for roles, permissions, visual indicators, or player categorization.
     </p>
 
-<!-- OVERVIEW: Execution context and behavior details -->
+<!-- OVERVIEW: Core API information -->
 <h2>Overview</h2>
 <div class="overview-grid">
-  <!-- Where API can be executed -->
   <div class="overview-item">
-    <div class="overview-label">Execution Context</div>
-    <div class="overview-value">Server-side only<br>(client calls will fail)</div>
+    <div class="overview-label">Server/Client</div>
+    <div class="overview-value">Server-side only</div>
   </div>
   
-  <!-- Script types that can call this API -->
   <div class="overview-item">
-    <div class="overview-label">Valid Script Types</div>
-    <div class="overview-value">
-      <code>Script</code><br>
-      <code>ModuleScript</code> (server)<br>
-      <strong style="color: #ef4444;">NOT LocalScript</strong>
-    </div>
+    <div class="overview-label">Script Types</div>
+    <div class="overview-value">Script, ModuleScript</div>
   </div>
   
-  <!-- What the API returns -->
   <div class="overview-item">
     <div class="overview-label">Returns</div>
-    <div class="overview-value">
-      <code>boolean</code> success<br>
-      <code>string</code> message
-    </div>
+    <div class="overview-value"><code>boolean</code>, <code>string</code></div>
   </div>
   
-  <!-- Side effects and what happens when called -->
   <div class="overview-item">
-    <div class="overview-label">Effects</div>
-    <div class="overview-value">
-      • Adds tag to player inventory<br>
-      • Replicates to client automatically<br>
-      • Fires <code>OnTagGiven</code> event<br>
-      • Tag becomes available to equip
-    </div>
+    <div class="overview-label">What It Does</div>
+    <div class="overview-value">Gives a tag to a player. The tag is added to their inventory and can be equipped.</div>
   </div>
 </div>
+
 
 
     <h2>Syntax</h2>
@@ -696,6 +681,7 @@ end)</code></pre>
 </script>
 </body>
 </html>
+
 
 
 
