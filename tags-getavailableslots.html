@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tags · Get Avaiblable Slots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <!-- Add favicon here -->
+    <link rel="icon" type="image/png" href="Assets/Logo.png">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Highlight.js (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Sidebar -->
+ <aside class="sidebar no-scrollbar">
+        <div class="sidebar-inner">
+
+            <!-- Logo / title -->
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <img src="Assets/Logo.png" alt="Logo">
+                </div>
+                <div class="sidebar-logo-text">
+                    <div class="sidebar-logo-title">Vault Docs</div>
+                    <div class="sidebar-logo-subtitle">Versatile Asset Utility Library Tools</div>
+                </div>
+            </div>
+
+            <!-- Nav -->
+            <div class="sidebar-nav-section" style="margin-top:0.9rem;">
+                <!-- Overview -->
+                <div class="nav-parent-row">
+                    <a href="index.html" class="nav-link-parent">Overview</a>
+                </div>
+
+                <!-- CCTFF group -->
+                <div class="nav-parent-row" data-toggle="cctff-main">
+                    <a href="cctff.html" class="nav-link-parent">CCTFF</a>
+                    <i class="fas fa-chevron-right nav-chevron open"></i>
+                </div>
+                <ul id="cctff-main" class="nav-list nav-children">
+                    <li class="nav-item">
+                        <a href="cctff.html" class="nav-child-link">Overview</a>
+                    </li>
+
+                    <!-- Tags group (this page) -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="tags-sub">
+                            <a href="tags.html" class="nav-link-parent active">Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron open"></i>
+                        </div>
+                        <ul id="tags-sub" class="nav-children">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="tags.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give -->
+                            <li class="nav-item">
+                                <a href="tags-give.html" class="nav-child-link">TagAPI:Give</a>
+                            </li>
+
+                            <!-- Remove -->
+                            <li class="nav-item">
+                                <a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a>
+                            </li>
+
+                            <!-- Equip -->
+                            <li class="nav-item">
+                                <a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a>
+                            </li>
+                            
+                            <!-- Unequip -->
+                            <li class="nav-item">
+                                <a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a>
+                            </li>
+
+                            <!-- Get Owned -->
+                            <li class="nav-item">
+                                <a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a>
+                            </li>
+
+                            <!-- Get Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a>
+                            </li>
+
+                            <!-- Has Tag -->
+                            <li class="nav-item">
+                                <a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a>
+                            </li>
+
+                            <!-- Is Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-isequipped.html" class="nav-child-link">TagAPI:IsEquipped</a>
+                            </li>
+
+                            <!-- Clear All -->
+                            <li class="nav-item">
+                                <a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a>
+                            </li>
+                            
+                            <!-- Unequip All -->
+                            <li class="nav-item">
+                                <a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a>
+                            </li>
+
+                            <!-- Get Max Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a>
+                            </li>
+
+                            <!-- Get Available Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getavailableslots.html" class="nav-child-link active">TagAPI:GetAvailableSlots</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Leaderboard Tags -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="leaderboard-sub">
+                            <a href="leaderboard.html" class="nav-link-parent">Leaderboard Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="leaderboard-sub" class="nav-children hidden">
+                            
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="leaderboard.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-givetag.html" class="nav-child-link">TagAPI:GiveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Update Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a>
+                            </li>
+
+                            <!-- Remove Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Get Leaderbaord Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- System Messages -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="system-sub">
+                            <a href="system.html" class="nav-link-parent">System Messages</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="system-sub" class="nav-children hidden">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Send System Message -->
+                            <li class="nav-item">
+                                <a href="system-sendmessage.html" class="nav-child-link">TagAPI:SendSystemMessage</a>
+                            </li>
+
+                            <!-- Update Client Settings -->
+                            <li class="nav-item">
+                                <a href="system-updatesettings.html" class="nav-child-link">TagAPI:UpdateClientSettings</a>
+                            </li>
+
+                            <!-- Is System Message Enabled -->
+                            <li class="nav-item">
+                                <a href="system-messageenabled.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+<main class="content-wrapper">
+    <div class="content-inner">
+        <h1>TagAPI:GetAvailableSlots</h1>
+        <p>The <code>TagAPI:GetAvailableSlots</code> method returns the number of empty tag slots a player currently has available for equipping additional tags. This is calculated as the difference between maximum slots and currently equipped tags.</p>
+
+      <h2>Overview</h2>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="overview-label">Execution Context</div>
+                <div class="overview-value"><code>Server</code>, <code>Client</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Script Type</div>
+                <div class="overview-value">Server Script, Local Script</div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Returns</div>
+                <div class="overview-value"><code>number</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Side Effects</div>
+                <div class="overview-value">None - read-only operation</div>
+            </div>
+        </div>
+
+        <h2>Syntax</h2>
+        <p><code>local availableSlots = TagAPI:GetAvailableSlots(player: Player)</code></p>
+
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>player</code></td>
+                    <td><code>Player</code></td>
+                    <td>The player instance to check available slots for</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Return Values</h2>
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Return</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>availableSlots</code></td>
+                    <td><code>number</code></td>
+                    <td>The number of empty slots available for equipping tags (0 or more)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Basic Usage</h2>
+        <p>Check how many slots are available for a player.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CCTFF = require(ReplicatedStorage:WaitForChild("CCTFF"))
+local TagAPI = CCTFF.TagAPI
+
+local availableSlots = TagAPI:GetAvailableSlots(player)
+print(player.Name .. " has " .. availableSlots .. " available slot(s)")</code></pre>
+        </div>
+
+        <h2>Quick Slot Check</h2>
+        <p>Verify if player can equip more tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function hasAvailableSlot(player)
+    return TagAPI:GetAvailableSlots(player) > 0
+end
+
+if hasAvailableSlot(player) then
+    print("Player can equip more tags")
+else
+    print("All slots are full")
+end</code></pre>
+        </div>
+
+        <h2>Safe Equip Function</h2>
+        <p>Check available slots before equipping a tag.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function safeEquipTag(player, tagId)
+    local availableSlots = TagAPI:GetAvailableSlots(player)
+    
+    if availableSlots == 0 then
+        return false, "No available slots. Unequip a tag first."
+    end
+    
+    return TagAPI:Equip(player, tagId)
+end
+
+local success, message = safeEquipTag(player, "VIP")
+print(message)</code></pre>
+        </div>
+
+        <h2>UI Notification</h2>
+        <p>Display available slots to the player.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>-- LocalScript
+local player = game.Players.LocalPlayer
+local TagAPI = CCTFF.TagAPI
+local statusLabel = script.Parent.SlotStatus
+
+local function updateSlotStatus()
+    local available = TagAPI:GetAvailableSlots(player)
+    
+    if available == 0 then
+        statusLabel.Text = "⚠️ All slots full"
+        statusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
+    elseif available == 1 then
+        statusLabel.Text = "1 slot available"
+        statusLabel.TextColor3 = Color3.fromRGB(255, 200, 0)
+    else
+        statusLabel.Text = available .. " slots available"
+        statusLabel.TextColor3 = Color3.fromRGB(100, 255, 100)
+    end
+end
+
+-- Update every 2 seconds
+while true do
+    updateSlotStatus()
+    task.wait(2)
+end</code></pre>
+        </div>
+
+        <h2>Shop Purchase Logic</h2>
+        <p>Disable equip button when slots are full.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>-- LocalScript
+local player = game.Players.LocalPlayer
+local TagAPI = CCTFF.TagAPI
+local equipButton = script.Parent.EquipButton
+
+local function updateButtonState()
+    local available = TagAPI:GetAvailableSlots(player)
+    
+    if available > 0 then
+        equipButton.BackgroundColor3 = Color3.fromRGB(34, 197, 94)
+        equipButton.Text = "Equip Tag"
+        equipButton.Active = true
+    else
+        equipButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+        equipButton.Text = "No Slots Available"
+        equipButton.Active = false
+    end
+end
+
+equipButton.MouseButton1Click:Connect(function()
+    if TagAPI:GetAvailableSlots(player) > 0 then
+        -- Proceed with equip
+        equipRemote:FireServer(selectedTagId)
+    end
+end)
+
+updateButtonState()</code></pre>
+        </div>
+
+        <h2>Batch Equip Validation</h2>
+        <p>Check if player can equip multiple tags at once.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function canEquipMultiple(player, tagList)
+    local available = TagAPI:GetAvailableSlots(player)
+    local needed = #tagList
+    
+    if available >= needed then
+        return true, "All tags can be equipped"
+    else
+        local shortage = needed - available
+        return false, "Need " .. shortage .. " more slot(s)"
+    end
+end
+
+local tagsToEquip = {"VIP", "Premium", "Supporter"}
+local canEquip, message = canEquipMultiple(player, tagsToEquip)
+print(message)</code></pre>
+        </div>
+
+        <h2>Auto-Equip System</h2>
+        <p>Automatically equip tags as slots become available.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function autoEquipQueue(player, queue)
+    local available = TagAPI:GetAvailableSlots(player)
+    local equipped = 0
+    
+    for i = 1, math.min(available, #queue) do
+        local tagId = queue[i]
+        local success = TagAPI:Equip(player, tagId)
+        
+        if success then
+            equipped = equipped + 1
+            table.remove(queue, 1)
+        end
+    end
+    
+    return equipped, queue
+end
+
+local equipQueue = {"VIP", "Premium", "Supporter", "Champion"}
+local count, remaining = autoEquipQueue(player, equipQueue)
+
+print("Equipped " .. count .. " tags")
+print("Remaining in queue: " .. #remaining)</code></pre>
+        </div>
+
+        <h2>Warning Before Full</h2>
+        <p>Alert player when they have one slot left.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>TagAPI.OnTagEquipped:Connect(function(player, tagId)
+    local available = TagAPI:GetAvailableSlots(player)
+    
+    if available == 1 then
+        local notifyRemote = ReplicatedStorage.NotifyPlayer
+        notifyRemote:FireClient(
+            player, 
+            "Warning: Only 1 tag slot remaining!"
+        )
+    elseif available == 0 then
+        local notifyRemote = ReplicatedStorage.NotifyPlayer
+        notifyRemote:FireClient(
+            player, 
+            "All tag slots are now full. Unequip a tag to equip another."
+        )
+    end
+end)</code></pre>
+        </div>
+
+        <h2>Slot Progress Bar</h2>
+        <p>Create a visual progress bar showing slot usage.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>-- LocalScript
+local player = game.Players.LocalPlayer
+local TagAPI = CCTFF.TagAPI
+local progressBar = script.Parent.ProgressBar
+
+local function updateProgressBar()
+    local maxSlots = TagAPI:GetMaxSlots(player)
+    local available = TagAPI:GetAvailableSlots(player)
+    local used = maxSlots - available
+    
+    local fillPercentage = used / maxSlots
+    progressBar.Size = UDim2.new(fillPercentage, 0, 1, 0)
+    
+    -- Color based on usage
+    if fillPercentage >= 1.0 then
+        progressBar.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red
+    elseif fillPercentage >= 0.75 then
+        progressBar.BackgroundColor3 = Color3.fromRGB(255, 165, 0) -- Orange
+    else
+        progressBar.BackgroundColor3 = Color3.fromRGB(0, 255, 0) -- Green
+    end
+end
+
+while true do
+    updateProgressBar()
+    task.wait(1)
+end</code></pre>
+        </div>
+
+        <h2>Conditional Tag Giving</h2>
+        <p>Only give tags if player has room to equip them.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function giveAndEquipIfPossible(player, tagId)
+    -- Give the tag
+    local gaveTag, message = TagAPI:Give(player, tagId)
+    if not gaveTag then
+        return false, message
+    end
+    
+    -- Try to equip if slots available
+    local available = TagAPI:GetAvailableSlots(player)
+    if available > 0 then
+        TagAPI:Equip(player, tagId)
+        return true, "Tag given and equipped"
+    else
+        return true, "Tag given but no slots available to equip"
+    end
+end
+
+local success, message = giveAndEquipIfPossible(player, "NewTag")
+print(message)</code></pre>
+        </div>
+
+        <h2>Slot Fullness Percentage</h2>
+        <p>Calculate what percentage of slots are filled.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function getSlotFullnessPercentage(player)
+    local maxSlots = TagAPI:GetMaxSlots(player)
+    local available = TagAPI:GetAvailableSlots(player)
+    local used = maxSlots - available
+    
+    local percentage = (used / maxSlots) * 100
+    return math.floor(percentage)
+end
+
+local fullness = getSlotFullnessPercentage(player)
+print("Slots are " .. fullness .. "% full")</code></pre>
+        </div>
+
+        <h2>Leaderboard Display</h2>
+        <p>Show available slots in leaderstats.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>game.Players.PlayerAdded:Connect(function(player)
+    local leaderstats = Instance.new("Folder")
+    leaderstats.Name = "leaderstats"
+    leaderstats.Parent = player
+    
+    local availableSlots = Instance.new("IntValue")
+    availableSlots.Name = "Available Slots"
+    availableSlots.Value = TagAPI:GetAvailableSlots(player)
+    availableSlots.Parent = leaderstats
+    
+    -- Update when tags change
+    TagAPI.OnTagEquipped:Connect(function(p)
+        if p == player then
+            availableSlots.Value = TagAPI:GetAvailableSlots(player)
+        end
+    end)
+    
+    TagAPI.OnTagUnequipped:Connect(function(p)
+        if p == player then
+            availableSlots.Value = TagAPI:GetAvailableSlots(player)
+        end
+    end)
+end)</code></pre>
+        </div>
+
+        <h2>Smart Loadout Manager</h2>
+        <p>Load as many tags from a loadout as possible.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function loadSmartLoadout(player, loadout)
+    -- Unequip all first
+    TagAPI:UnequipAll(player)
+    
+    local available = TagAPI:GetAvailableSlots(player)
+    local toEquip = math.min(#loadout, available)
+    local equipped = 0
+    
+    for i = 1, toEquip do
+        local success = TagAPI:Equip(player, loadout[i])
+        if success then
+            equipped = equipped + 1
+        end
+    end
+    
+    return equipped, toEquip
+end
+
+local myLoadout = {"Owner", "Developer", "VIP", "Premium"}
+local equipped, attempted = loadSmartLoadout(player, myLoadout)
+
+print("Equipped " .. equipped .. "/" .. attempted .. " tags from loadout")</code></pre>
+        </div>
+
+        <h2>Priority Queue System</h2>
+        <p>Equip highest priority tags based on available slots.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local TAG_PRIORITIES = {
+    Owner = 1,
+    Admin = 2,
+    Moderator = 3,
+    VIP = 4,
+    Premium = 5
+}
+
+local function equipByPriority(player)
+    local ownedTags = TagAPI:GetOwned(player)
+    local available = TagAPI:GetAvailableSlots(player)
+    
+    -- Sort by priority
+    table.sort(ownedTags, function(a, b)
+        local pA = TAG_PRIORITIES[a] or 999
+        local pB = TAG_PRIORITIES[b] or 999
+        return pA < pB
+    end)
+    
+    -- Equip highest priority tags
+    for i = 1, math.min(available, #ownedTags) do
+        TagAPI:Equip(player, ownedTags[i])
+    end
+end
+
+equipByPriority(player)</code></pre>
+        </div>
+
+        <h2>Admin Command</h2>
+        <p>Check available slots via admin command.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function checkAvailableCommand(admin, args)
+    local targetName = args[1]
+    if not targetName then
+        return false, "Usage: !available [player]"
+    end
+    
+    local targetPlayer = game.Players:FindFirstChild(targetName)
+    if not targetPlayer then
+        return false, "Player not found"
+    end
+    
+    local available = TagAPI:GetAvailableSlots(targetPlayer)
+    local maxSlots = TagAPI:GetMaxSlots(targetPlayer)
+    local used = maxSlots - available
+    
+    local message = targetPlayer.Name .. " has " .. available .. " available slot(s)\n" ..
+                    "Using: " .. used .. "/" .. maxSlots
+    
+    return true, message
+end
+
+adminCommands["available"] = checkAvailableCommand</code></pre>
+        </div>
+
+        <h2>Achievement System</h2>
+        <p>Award achievement for filling all slots.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>TagAPI.OnTagEquipped:Connect(function(player, tagId)
+    local available = TagAPI:GetAvailableSlots(player)
+    
+    if available == 0 then
+        -- Player filled all slots
+        if not TagAPI:HasTag(player, "SlotMaster") then
+            TagAPI:Give(player, "SlotMaster")
+            
+            local notifyRemote = ReplicatedStorage.NotifyPlayer
+            notifyRemote:FireClient(
+                player,
+                "Achievement Unlocked: Slot Master!"
+            )
+        end
+    end
+end)</code></pre>
+        </div>
+    </div>
+</main>
+
+</div>
+
+<script>
+    if (window.hljs) hljs.highlightAll();
+
+    document.querySelectorAll('.nav-parent-row').forEach(row => {
+        const id = row.getAttribute('data-toggle');
+        const target = id ? document.getElementById(id) : null;
+        const chevron = row.querySelector('.nav-chevron');
+
+        row.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') return;
+            if (!target) return;
+
+            const hidden = target.classList.contains('hidden');
+            target.classList.toggle('hidden', !hidden);
+            if (chevron) chevron.classList.toggle('open', hidden);
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
