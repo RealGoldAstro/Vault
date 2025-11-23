@@ -204,15 +204,29 @@
       The <code>TagAPI:Equip</code> method equips a tag that a player already owns, making it visible in chat. This method is server-side only and requires the CCTFF framework to be properly initialized. Players can only equip tags they own, and the system respects maximum slot limits defined in your configuration.
     </p>
 
-    <h2>Overview</h2>
-    <p>
-      <strong>Where it fires:</strong> Server-side only (ServerScriptService, ServerStorage scripts)<br>
-      <strong>When to use:</strong> When you need to equip tags for display in chat after a player has received them<br>
-      <strong>Returns:</strong> boolean, string (success status and message)<br>
-      <strong>Side effects:</strong> Updates equipped tags collection, fires replication to client, triggers tag display in chat, fires OnTagEquipped event<br>
-      <strong>Max slots:</strong> Respects <code>Config.MaxEquippedTags</code> limit (default: 3)<br>
-      <strong>Sorting:</strong> Equipped tags are automatically sorted by priority
-    </p>
+<!-- OVERVIEW: Core API information -->
+<h2>Overview</h2>
+<div class="overview-grid">
+  <div class="overview-item">
+    <div class="overview-label">Server/Client</div>
+    <div class="overview-value">Server-side only</div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">Script Types</div>
+    <div class="overview-value">Script, ModuleScript</div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">Returns</div>
+    <div class="overview-value"><code>boolean</code>, <code>string</code></div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">What It Does</div>
+    <div class="overview-value">Equips a tag the player owns, making it visible in chat. Player must own the tag first.</div>
+  </div>
+</div>
 
     <h2>Syntax</h2>
     <div class="code-block-wrapper">
