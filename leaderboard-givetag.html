@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard · Give</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <!-- Add favicon here -->
+    <link rel="icon" type="image/png" href="Assets/Logo.png">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Highlight.js (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Sidebar -->
+ <aside class="sidebar no-scrollbar">
+        <div class="sidebar-inner">
+
+            <!-- Logo / title -->
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <img src="Assets/Logo.png" alt="Logo">
+                </div>
+                <div class="sidebar-logo-text">
+                    <div class="sidebar-logo-title">Vault Docs</div>
+                    <div class="sidebar-logo-subtitle">Versatile Asset Utility Library Tools</div>
+                </div>
+            </div>
+
+            <!-- Nav -->
+            <div class="sidebar-nav-section" style="margin-top:0.9rem;">
+                <!-- Overview -->
+                <div class="nav-parent-row">
+                    <a href="index.html" class="nav-link-parent">Overview</a>
+                </div>
+
+                <!-- CCTFF group -->
+                <div class="nav-parent-row" data-toggle="cctff-main">
+                    <a href="cctff.html" class="nav-link-parent">CCTFF</a>
+                    <i class="fas fa-chevron-right nav-chevron open"></i>
+                </div>
+                <ul id="cctff-main" class="nav-list nav-children">
+                    <li class="nav-item">
+                        <a href="cctff.html" class="nav-child-link">Overview</a>
+                    </li>
+
+                    <!-- Tags group (this page) -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="tags-sub">
+                            <a href="tags.html" class="nav-link-parent">Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="tags-sub" class="nav-children hidden">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="tags.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give -->
+                            <li class="nav-item">
+                                <a href="tags-give.html" class="nav-child-link">TagAPI:Give</a>
+                            </li>
+
+                            <!-- Remove -->
+                            <li class="nav-item">
+                                <a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a>
+                            </li>
+
+                            <!-- Equip -->
+                            <li class="nav-item">
+                                <a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a>
+                            </li>
+                            
+                            <!-- Unequip -->
+                            <li class="nav-item">
+                                <a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a>
+                            </li>
+
+                            <!-- Get Owned -->
+                            <li class="nav-item">
+                                <a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a>
+                            </li>
+
+                            <!-- Get Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a>
+                            </li>
+
+                            <!-- Has Tag -->
+                            <li class="nav-item">
+                                <a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a>
+                            </li>
+
+                            <!-- Is Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-isequipped.html" class="nav-child-link">TagAPI:IsEquipped</a>
+                            </li>
+
+                            <!-- Clear All -->
+                            <li class="nav-item">
+                                <a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a>
+                            </li>
+                            
+                            <!-- Unequip All -->
+                            <li class="nav-item">
+                                <a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a>
+                            </li>
+
+                            <!-- Get Max Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a>
+                            </li>
+
+                            <!-- Get Available Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getavailableslots.html" class="nav-child-link">TagAPI:GetAvailableSlots</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!-- Leaderboard Tags -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="leaderboard-sub">
+                            <a href="leaderboard.html" class="nav-link-parent active">Leaderboard Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron open"></i>
+                        </div>
+                        <ul id="leaderboard-sub" class="nav-children">
+                            
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="leaderboard.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-givetag.html" class="nav-child-link active">TagAPI:GiveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Update Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a>
+                            </li>
+
+                            <!-- Remove Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Get Leaderbaord Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- System Messages -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="system-sub">
+                            <a href="system.html" class="nav-link-parent">System Messages</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
+                        </div>
+                        <ul id="system-sub" class="nav-children hidden">
+
+                            <!-- Api Index -->
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Send System Message -->
+                            <li class="nav-item">
+                                <a href="system-sendmessage.html" class="nav-child-link">TagAPI:SendSystemMessage</a>
+                            </li>
+
+                            <!-- Update Client Settings -->
+                            <li class="nav-item">
+                                <a href="system-updatesettings.html" class="nav-child-link">TagAPI:UpdateClientSettings</a>
+                            </li>
+
+                            <!-- Is System Message Enabled -->
+                            <li class="nav-item">
+                                <a href="system-messageenabled.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+<main class="content-wrapper">
+    <div class="content-inner">
+        <h1>TagAPI:GiveLeaderboardTag</h1>
+        <p>The <code>TagAPI:GiveLeaderboardTag</code> method assigns a special leaderboard tag to a player with dynamic text that updates based on player stats or rankings. Unlike regular tags, leaderboard tags support dynamic text replacement (using <code>%s</code> placeholder) that can be updated without re-giving the tag.</p>
+        
+      <h2>Overview</h2>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="overview-label">Execution Context</div>
+                <div class="overview-value"><code>Server</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Script Type</div>
+                <div class="overview-value">Server Script</div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Returns</div>
+                <div class="overview-value"><code>boolean</code>, <code>string</code></div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-label">Side Effects</div>
+                <div class="overview-value">Gives tag to player with dynamic text</div>
+            </div>
+        </div>
+
+        <h2>Syntax</h2>
+        <p><code>local success, message = TagAPI:GiveLeaderboardTag(player: Player, tagId: string, dynamicText: string)</code></p>
+
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>player</code></td>
+                    <td><code>Player</code></td>
+                    <td>The player instance who should receive the leaderboard tag</td>
+                </tr>
+                <tr>
+                    <td><code>tagId</code></td>
+                    <td><code>string</code></td>
+                    <td>The leaderboard tag identifier (must be defined in Config.LeaderboardTags)</td>
+                </tr>
+                <tr>
+                    <td><code>dynamicText</code></td>
+                    <td><code>string</code></td>
+                    <td>The text to replace the %s placeholder in the tag (e.g., "#1", "Top 10")</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Return Values</h2>
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Return</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>success</code></td>
+                    <td><code>boolean</code></td>
+                    <td>True if leaderboard tag was given successfully, false otherwise</td>
+                </tr>
+                <tr>
+                    <td><code>message</code></td>
+                    <td><code>string</code></td>
+                    <td>Descriptive message about the operation result</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Basic Usage</h2>
+        <p>Give a leaderboard tag with rank text.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CCTFF = require(ReplicatedStorage:WaitForChild("CCTFF"))
+local TagAPI = CCTFF.TagAPI
+
+-- Give "TopCoins" tag with "#1" rank displayed
+local success, message = TagAPI:GiveLeaderboardTag(player, "TopCoins", "#1")
+if success then
+    print("Leaderboard tag given: " .. message)
+else
+    print("Error: " .. message)
+end</code></pre>
+        </div>
+
+        <h2>Ranking System</h2>
+        <p>Award leaderboard tags based on player rankings.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updatePlayerRank(player, rank)
+    local rankText = "#" .. rank
+    
+    if rank == 1 then
+        TagAPI:GiveLeaderboardTag(player, "TopCoins", rankText)
+        TagAPI:Equip(player, "TopCoins")
+    elseif rank <= 10 then
+        TagAPI:GiveLeaderboardTag(player, "TopCoins", "Top " .. rank)
+        TagAPI:Equip(player, "TopCoins")
+    elseif rank <= 100 then
+        TagAPI:GiveLeaderboardTag(player, "TopCoins", "Top 100")
+    end
+end
+
+-- Usage
+updatePlayerRank(player, 1) -- Gives "TopCoins #1"
+updatePlayerRank(player, 5) -- Gives "TopCoins Top 5"</code></pre>
+        </div>
+
+        <h2>Multiple Stat Leaderboards</h2>
+        <p>Track multiple leaderboard stats with different tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updateLeaderboardTags(player, coinsRank, killsRank, winsRank)
+    -- Coins leaderboard
+    if coinsRank <= 10 then
+        TagAPI:GiveLeaderboardTag(player, "TopCoins", "#" .. coinsRank)
+    end
+    
+    -- Kills leaderboard
+    if killsRank <= 10 then
+        TagAPI:GiveLeaderboardTag(player, "TopKills", "#" .. killsRank)
+    end
+    
+    -- Wins leaderboard
+    if winsRank <= 10 then
+        TagAPI:GiveLeaderboardTag(player, "TopWins", "#" .. winsRank)
+    end
+end
+
+updateLeaderboardTags(player, 1, 5, 3)</code></pre>
+        </div>
+
+        <h2>Percentage Display</h2>
+        <p>Show player's percentile ranking.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function givePercentileTag(player, percentile)
+    local displayText = "Top " .. percentile .. "%"
+    
+    TagAPI:GiveLeaderboardTag(player, "TopPlayers", displayText)
+    TagAPI:Equip(player, "TopPlayers")
+    
+    print(player.Name .. " is in the " .. displayText)
+end
+
+-- Player in top 5%
+givePercentileTag(player, 5)</code></pre>
+        </div>
+
+        <h2>Seasonal Leaderboards</h2>
+        <p>Award seasonal ranking tags with season identifier.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local CURRENT_SEASON = "S3"
+
+local function awardSeasonRank(player, rank)
+    local rankText = CURRENT_SEASON .. " #" .. rank
+    
+    TagAPI:GiveLeaderboardTag(player, "SeasonRank", rankText)
+    TagAPI:Equip(player, "SeasonRank")
+    
+    print("Awarded " .. rankText .. " to " .. player.Name)
+end
+
+-- Season 3 rank #1
+awardSeasonRank(player, 1)</code></pre>
+        </div>
+
+        <h2>Level-Based Tags</h2>
+        <p>Display player level in leaderboard tag.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updateLevelTag(player, level)
+    local levelText = "Lvl " .. level
+    
+    TagAPI:GiveLeaderboardTag(player, "LevelTag", levelText)
+    
+    -- Auto-equip for high levels
+    if level >= 100 then
+        TagAPI:Equip(player, "LevelTag")
+    end
+end
+
+player.leaderstats.Level.Changed:Connect(function(newLevel)
+    updateLevelTag(player, newLevel)
+end)</code></pre>
+        </div>
+
+        <h2>Score Threshold Display</h2>
+        <p>Show achievement threshold reached.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local SCORE_TIERS = {
+    {threshold = 100000, text = "100K Club"},
+    {threshold = 50000, text = "50K Club"},
+    {threshold = 10000, text = "10K Club"}
+}
+
+local function checkScoreTiers(player, score)
+    for _, tier in ipairs(SCORE_TIERS) do
+        if score >= tier.threshold then
+            TagAPI:GiveLeaderboardTag(player, "ScoreClub", tier.text)
+            TagAPI:Equip(player, "ScoreClub")
+            break
+        end
+    end
+end
+
+player.leaderstats.Score.Changed:Connect(function(newScore)
+    checkScoreTiers(player, newScore)
+end)</code></pre>
+        </div>
+
+        <h2>Competitive Tier System</h2>
+        <p>Display competitive rank tier.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local RANK_TIERS = {
+    {minElo = 2000, name = "Grandmaster"},
+    {minElo = 1800, name = "Master"},
+    {minElo = 1600, name = "Diamond"},
+    {minElo = 1400, name = "Platinum"},
+    {minElo = 1200, name = "Gold"},
+    {minElo = 1000, name = "Silver"},
+    {minElo = 0, name = "Bronze"}
+}
+
+local function updateRankTier(player, elo)
+    for _, tier in ipairs(RANK_TIERS) do
+        if elo >= tier.minElo then
+            TagAPI:GiveLeaderboardTag(player, "RankTier", tier.name)
+            TagAPI:Equip(player, "RankTier")
+            break
+        end
+    end
+end
+
+updateRankTier(player, 1850) -- Gives "Master" tier</code></pre>
+        </div>
+
+        <h2>Daily Leaderboard Reset</h2>
+        <p>Reset and update daily leaderboard tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function resetDailyLeaderboard()
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        -- Remove old daily tag
+        if TagAPI:HasTag(player, "DailyTop") then
+            TagAPI:Remove(player, "DailyTop")
+        end
+    end
+end
+
+local function updateDailyRankings()
+    local sortedPlayers = {} -- Sort by daily points
+    
+    for i, player in ipairs(sortedPlayers) do
+        if i <= 3 then
+            local suffix = {"st", "nd", "rd"}
+            local rankText = i .. (suffix[i] or "th")
+            TagAPI:GiveLeaderboardTag(player, "DailyTop", rankText)
+            TagAPI:Equip(player, "DailyTop")
+        end
+    end
+end
+
+-- Reset at midnight
+resetDailyLeaderboard()
+updateDailyRankings()</code></pre>
+        </div>
+
+        <h2>Streak Counter</h2>
+        <p>Display win/login streak in tag.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updateStreakTag(player, streakCount)
+    local streakText = streakCount .. " Day"
+    if streakCount ~= 1 then
+        streakText = streakText .. "s"
+    end
+    
+    TagAPI:GiveLeaderboardTag(player, "LoginStreak", streakText)
+    
+    -- Auto-equip for milestones
+    if streakCount >= 7 or streakCount >= 30 or streakCount >= 100 then
+        TagAPI:Equip(player, "LoginStreak")
+    end
+end
+
+updateStreakTag(player, 15) -- "15 Days"</code></pre>
+        </div>
+
+        <h2>Guild/Team Ranking</h2>
+        <p>Show guild rank within organization.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updateGuildRank(player, guildName, rank)
+    local rankText = guildName .. " #" .. rank
+    
+    TagAPI:GiveLeaderboardTag(player, "GuildRank", rankText)
+    TagAPI:Equip(player, "GuildRank")
+end
+
+updateGuildRank(player, "Dragons", 3) -- "Dragons #3"</code></pre>
+        </div>
+
+        <h2>Time-Limited Event Rank</h2>
+        <p>Award event-specific ranking tags.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function awardEventRank(player, eventName, placement)
+    local rankText = eventName .. " #" .. placement
+    
+    TagAPI:GiveLeaderboardTag(player, "EventRank", rankText)
+    
+    -- Auto-equip top 3
+    if placement <= 3 then
+        TagAPI:Equip(player, "EventRank")
+    end
+    
+    print(player.Name .. " placed " .. placement .. " in " .. eventName)
+end
+
+awardEventRank(player, "Summer2025", 1)</code></pre>
+        </div>
+
+        <h2>Achievement Point Display</h2>
+        <p>Show total achievement points earned.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updateAchievementTag(player, totalPoints)
+    local pointsText = totalPoints .. "pts"
+    
+    TagAPI:GiveLeaderboardTag(player, "AchievementPoints", pointsText)
+    
+    -- Equip at milestones
+    if totalPoints >= 1000 then
+        TagAPI:Equip(player, "AchievementPoints")
+    end
+end
+
+player.leaderstats.AchievementPoints.Changed:Connect(function(points)
+    updateAchievementTag(player, points)
+end)</code></pre>
+        </div>
+
+        <h2>Power Level/Rating</h2>
+        <p>Display combat power or rating number.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updatePowerLevel(player, powerLevel)
+    local powerText = "⚡" .. powerLevel
+    
+    TagAPI:GiveLeaderboardTag(player, "PowerLevel", powerText)
+    
+    -- Equip for high power players
+    if powerLevel >= 9000 then
+        TagAPI:Equip(player, "PowerLevel")
+        print("IT'S OVER 9000!")
+    end
+end
+
+updatePowerLevel(player, 9500)</code></pre>
+        </div>
+
+        <h2>Wealth Display</h2>
+        <p>Show total wealth with formatted numbers.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function formatNumber(num)
+    if num >= 1000000 then
+        return string.format("%.1fM", num / 1000000)
+    elseif num >= 1000 then
+        return string.format("%.1fK", num / 1000)
+    else
+        return tostring(num)
+    end
+end
+
+local function updateWealthTag(player, coins)
+    local wealthText = "$" .. formatNumber(coins)
+    
+    TagAPI:GiveLeaderboardTag(player, "Wealth", wealthText)
+    
+    if coins >= 1000000 then
+        TagAPI:Equip(player, "Wealth")
+    end
+end
+
+updateWealthTag(player, 2500000) -- "$2.5M"</code></pre>
+        </div>
+
+        <h2>Prestige Level</h2>
+        <p>Display prestige level achieved.</p>
+        <div class="code-block-wrapper">
+            <div class="code-block-header">
+                <span>Lua</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>local function updatePrestigeTag(player, prestigeLevel)
+    local prestigeText = "P" .. prestigeLevel
+    
+    TagAPI:GiveLeaderboardTag(player, "Prestige", prestigeText)
+    TagAPI:Equip(player, "Prestige")
+    
+    print(player.Name .. " reached Prestige " .. prestigeLevel)
+end
+
+updatePrestigeTag(player, 10) -- "P10"</code></pre>
+        </div>
+    </div>
+</main>
+</div>
+
+<script>
+    if (window.hljs) hljs.highlightAll();
+
+    document.querySelectorAll('.nav-parent-row').forEach(row => {
+        const id = row.getAttribute('data-toggle');
+        const target = id ? document.getElementById(id) : null;
+        const chevron = row.querySelector('.nav-chevron');
+
+        row.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') return;
+            if (!target) return;
+            const hidden = target.classList.contains('hidden');
+            target.classList.toggle('hidden', !hidden);
+            if (chevron) chevron.classList.toggle('open', hidden);
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
