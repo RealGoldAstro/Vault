@@ -17,10 +17,10 @@
 <body>
 <div class="main-wrapper">
     <!-- Sidebar -->
-    <aside class="sidebar no-scrollbar">
+ <aside class="sidebar no-scrollbar">
         <div class="sidebar-inner">
 
-            <!-- Logo / title (same as index, text can be changed later) -->
+            <!-- Logo / title -->
             <div class="sidebar-logo">
                 <div class="sidebar-logo-icon">
                     <i class="fas fa-book"></i>
@@ -33,34 +33,94 @@
 
             <!-- Nav -->
             <div class="sidebar-nav-section" style="margin-top:0.9rem;">
-                <!-- Overview link -->
+                <!-- Overview -->
                 <div class="nav-parent-row">
                     <a href="index.html" class="nav-link-parent">Overview</a>
                 </div>
 
-                <!-- CCTFF group (this page) -->
+                <!-- CCTFF group -->
                 <div class="nav-parent-row" data-toggle="cctff-main">
                     <a href="cctff.html" class="nav-link-parent active">CCTFF</a>
                     <i class="fas fa-chevron-right nav-chevron open"></i>
                 </div>
                 <ul id="cctff-main" class="nav-list nav-children">
                     <li class="nav-item">
-                        <a href="cctff.html" class="nav-child-link active">Overview</a>
+                        <a href="cctff.html" class="nav-child-link">Overview</a>
                     </li>
 
-                    <!-- Tags -->
+                    <!-- Tags group (this page) -->
                     <li class="nav-item">
                         <div class="nav-parent-row" data-toggle="tags-sub">
                             <a href="tags.html" class="nav-link-parent">Tags</a>
-                            <i class="fas fa-chevron-right nav-chevron"></i>
+                            <i class="fas fa-chevron-right nav-chevron open"></i>
                         </div>
-                        <ul id="tags-sub" class="nav-children hidden">
+                        <ul id="tags-sub" class="nav-children">
+
+                            <!-- Api Index -->
                             <li class="nav-item">
-                                <a href="tags.html" class="nav-child-link">Tag API index</a>
+                                <a href="tags.html" class="nav-child-link">API index</a>
                             </li>
+
+                            <!-- Give -->
                             <li class="nav-item">
                                 <a href="tags-give.html" class="nav-child-link">TagAPI:Give</a>
                             </li>
+
+                            <!-- Remove -->
+                            <li class="nav-item">
+                                <a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a>
+                            </li>
+
+                            <!-- Equip -->
+                            <li class="nav-item">
+                                <a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a>
+                            </li>
+                            
+                            <!-- Unequip -->
+                            <li class="nav-item">
+                                <a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a>
+                            </li>
+
+                            <!-- Get Owned -->
+                            <li class="nav-item">
+                                <a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a>
+                            </li>
+
+                            <!-- Get Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a>
+                            </li>
+
+                            <!-- Has Tag -->
+                            <li class="nav-item">
+                                <a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a>
+                            </li>
+
+                            <!-- Is Equipped -->
+                            <li class="nav-item">
+                                <a href="tags-isequipped.html" class="nav-child-link">TagAPI:IsEquipped</a>
+                            </li>
+
+                            <!-- Clear All -->
+                            <li class="nav-item">
+                                <a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a>
+                            </li>
+                            
+                            <!-- Unequip All -->
+                            <li class="nav-item">
+                                <a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a>
+                            </li>
+
+                            <!-- Get Max Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a>
+                            </li>
+
+                            <!-- Get Available Slots -->
+                            <li class="nav-item">
+                                <a href="tags-getavailableslots.html" class="nav-child-link">TagAPI:GetAvailableSlots</a>
+                            </li>
+
                         </ul>
                     </li>
 
@@ -71,8 +131,30 @@
                             <i class="fas fa-chevron-right nav-chevron"></i>
                         </div>
                         <ul id="leaderboard-sub" class="nav-children hidden">
+                            
+                            <!-- Api Index -->
                             <li class="nav-item">
-                                <a href="leaderboard.html" class="nav-child-link">Leaderboard Tag API index</a>
+                                <a href="leaderboard.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Give Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-givetag.html" class="nav-child-link">TagAPI:GiveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Update Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a>
+                            </li>
+
+                            <!-- Remove Leaderboard Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a>
+                            </li>
+
+                            <!-- Get Leaderbaord Tag -->
+                            <li class="nav-item">
+                                <a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a>
                             </li>
                         </ul>
                     </li>
@@ -84,8 +166,25 @@
                             <i class="fas fa-chevron-right nav-chevron"></i>
                         </div>
                         <ul id="system-sub" class="nav-children hidden">
+
+                            <!-- Api Index -->
                             <li class="nav-item">
-                                <a href="system.html" class="nav-child-link">System Message API index</a>
+                                <a href="system.html" class="nav-child-link">API index</a>
+                            </li>
+
+                            <!-- Send System Message -->
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">TagAPI:SendSystemMessage</a>
+                            </li>
+
+                            <!-- Update Client Settings -->
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">TagAPI:UpdateClientSettings</a>
+                            </li>
+
+                            <!-- Is System Message Enabled -->
+                            <li class="nav-item">
+                                <a href="system.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a>
                             </li>
                         </ul>
                     </li>
@@ -93,7 +192,6 @@
             </div>
         </div>
     </aside>
-
     <!-- Main content (unchanged text/structure) -->
     <main class="content-wrapper">
         <div class="content-inner">
