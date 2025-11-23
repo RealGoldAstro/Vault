@@ -205,55 +205,23 @@
                     CCTFF is a lightweight Roblox framework for building rich, configurable chat formatting and tags
                     based on a single, central configuration instead of scattered magic values.
                 </p>
-
-                <div class="card-grid">
-                    <article class="card">
-                        <h3>What is CCTFF?</h3>
-                        <p>
-                            Understand the core concepts of CCTFF, how tags are defined, and how messages are built.
-                        </p>
-                        <a href="cctff.html" class="card-link">
-                            <span>Open CCTFF overview</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <article class="card">
-                        <h3>System design</h3>
-                        <p>
-                            See how the server, client, and configuration modules interact to render tags consistently.
-                        </p>
-                        <a href="system.html" class="card-link">
-                            <span>View system design</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-                </div>
             </header>
 
             <section>
-                <h2>Quick install preview</h2>
-                <div class="code-block-wrapper">
-                    <div class="code-block-header">
-                        <span>ServerScriptService.SetupCCTFF</span>
-                        <button class="copy-btn" data-copy-target="#install-snippet">Copy</button>
-                    </div>
-                    <pre><code id="install-snippet" class="language-lua">
--- Load the framework
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local CCTFF = require(ReplicatedStorage:WaitForChild("CCTFF"))
+                <h2>Framework Index</h2>
 
--- Configure your tags in one place
-CCTFF:RegisterTag("Owner", {
-    Priority = 100,
-    PrefixText = "[OWNER]",
-    TextColor = Color3.fromRGB(255, 196, 61),
-})
-
--- Hook into your chat system and apply formatting
-CCTFF:AttachToTextChatService()
-                    </code></pre>
-                </div>
+                <!-- 4‑wide grid of cards like your screenshot -->
+                    <div class="card-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                        <!-- Give -->
+                        <a href="cctff.html" class="card" style="text-decoration:none;">
+                        <h3><code>CCTFF</code></h3>
+                        <p>Custom Chat Tags Formatting Framework</p>
+                        </a>
+                    </div>           
+            </section>
+            
+            <section>
+                Hamburger
             </section>
         </div>
     </main>
