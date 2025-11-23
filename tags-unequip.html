@@ -204,15 +204,30 @@
       The <code>TagAPI:Unequip</code> method unequips a currently equipped tag from a player, removing it from chat display while preserving ownership. This method is server-side only and requires the CCTFF framework to be properly initialized. Players retain the tag in their inventory and can re-equip it later.
     </p>
 
-    <h2>Overview</h2>
-    <p>
-      <strong>Where it fires:</strong> Server-side only (ServerScriptService, ServerStorage scripts)<br>
-      <strong>When to use:</strong> When you need to remove tags from chat display without removing ownership<br>
-      <strong>Returns:</strong> boolean, string (success status and message)<br>
-      <strong>Side effects:</strong> Updates equipped tags collection, fires replication to client, removes tag from chat display, fires OnTagUnequipped event<br>
-      <strong>Ownership:</strong> Player retains ownership of the tag after unequipping<br>
-      <strong>Frees slots:</strong> Makes equip slot available for other tags
-    </p>
+<!-- OVERVIEW: Core API information -->
+<h2>Overview</h2>
+<div class="overview-grid">
+  <div class="overview-item">
+    <div class="overview-label">Server/Client</div>
+    <div class="overview-value">Server-side only</div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">Script Types</div>
+    <div class="overview-value">Script, ModuleScript</div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">Returns</div>
+    <div class="overview-value"><code>boolean</code>, <code>string</code></div>
+  </div>
+  
+  <div class="overview-item">
+    <div class="overview-label">What It Does</div>
+    <div class="overview-value">Unequips a tag from chat display. Player still owns the tag and can re-equip it later.</div>
+  </div>
+</div>
+
 
     <h2>Syntax</h2>
     <div class="code-block-wrapper">
