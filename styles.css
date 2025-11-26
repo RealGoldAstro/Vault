@@ -954,6 +954,334 @@ pre {
     border: 1px solid #111827;
 }
 
+/* ===== CCTFF Overview Page Styles ===== */
+
+/* Hero Section */
+.cctff-hero {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 3rem;
+}
+
+.cctff-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.cctff-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.cctff-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  color: #f9fafb;
+}
+
+.cctff-hero-subtitle {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.cctff-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.cctff-hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Stats Grid */
+.cctff-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.cctff-stat-item {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.cctff-stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.cctff-stat-label {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* Structure Grid */
+.cctff-structure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cctff-structure-item {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+}
+
+.cctff-structure-title {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.cctff-structure-item code {
+  display: block;
+  background: rgba(30, 41, 59, 0.6);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+/* Feature Sections */
+.cctff-feature-section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: radial-gradient(circle at top left, #0f172a 0%, #020617 70%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.85rem;
+}
+
+.cctff-feature-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.cctff-feature-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(56, 189, 248, 0.15);
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.cctff-feature-icon.gold {
+  background: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+}
+
+.cctff-feature-icon.yellow {
+  background: rgba(255, 255, 0, 0.15);
+  color: #ffff00;
+}
+
+.cctff-feature-section h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #f9fafb;
+}
+
+.cctff-feature-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+/* Preview Box */
+.cctff-preview {
+  margin-bottom: 1.5rem;
+}
+
+.cctff-preview-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+  margin-bottom: 0.5rem;
+}
+
+.cctff-preview-box {
+  background: #0a0f1a;
+  border: 1px solid #1f2937;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+}
+
+.cctff-preview-line {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.cctff-preview-line:last-child {
+  margin-bottom: 0;
+}
+
+/* Code Blocks */
+.cctff-code-section {
+  margin-bottom: 1.5rem;
+}
+
+.cctff-code-section:last-child {
+  margin-bottom: 0;
+}
+
+.cctff-code-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+  margin-bottom: 0.5rem;
+}
+
+.cctff-code-section pre {
+  background: var(--bg-code);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0;
+}
+
+/* Benefits Grid */
+.cctff-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.cctff-benefit-item {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  transition: all var(--transition-fast);
+}
+
+.cctff-benefit-item:hover {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: #374151;
+  transform: translateY(-2px);
+}
+
+.cctff-benefit-emoji {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.cctff-benefit-title {
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.cctff-benefit-desc {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Final CTA Section */
+.cctff-final-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 0.85rem;
+  margin-top: 4rem;
+}
+
+.cctff-final-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f9fafb;
+}
+
+.cctff-final-cta p {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.cctff-final-cta strong {
+  color: var(--accent);
+}
+
+/* Button Hover Effects */
+.btn-primary:hover {
+  background: #60d0fc !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
+}
+
+.btn-secondary:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cctff-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .cctff-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .cctff-feature-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
 /* inline code */
 code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -978,3 +1306,4 @@ code {
         padding: 1.8rem 1.4rem 2.5rem;
     }
 }
+
