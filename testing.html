@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTFF Screenshots</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background: #020617; padding: 2rem;">
+
+  <!-- Feature 1: Player Tags -->
+  <div style="max-width: 900px; margin: 0 auto 3rem; padding: 2.5rem; background: #020617;">
+    <section id="player-tags" class="cctff-feature-section">
+      <div class="cctff-feature-header">
+        <div class="cctff-feature-icon">
+          <i class="fas fa-tag"></i>
+        </div>
+        <h2>Player Tags</h2>
+      </div>
+      <p class="cctff-feature-description">
+        Role-based or achievement tags displayed before usernames. Players can equip multiple tags (configurable max slots).
+      </p>
+
+      <div class="cctff-preview">
+        <div class="cctff-preview-label">Live Preview</div>
+        <div class="cctff-preview-box">
+          <div class="cctff-preview-line">
+            <span style="color: #64ff64; font-weight: bold;">[DEVELOPER]</span>
+            <span style="color: #fff; font-weight: bold; margin: 0 0.3rem;">PlayerName:</span>
+            <span style="color: #64ff64;">Check out the new update!</span>
+          </div>
+          <div class="cctff-preview-line">
+            <span style="color: #ff0000; font-weight: bold;">[Owner]</span>
+            <span style="color: #e71313; font-weight: bold; margin: 0 0.3rem;">GameOwner:</span>
+            <span style="color: #ff0000;">Welcome to the server!</span>
+          </div>
+          <div class="cctff-preview-line">
+            <span style="color: #6496ff; font-weight: bold;">[TESTER]</span>
+            <span style="color: #fff; font-weight: bold; margin: 0 0.3rem;">BetaTester:</span>
+            <span style="color: #6496ff;">Found a bug in the new map.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cctff-code-section">
+        <div class="cctff-code-label">Configuration</div>
+        <pre><code class="language-lua">CustomChatTagsConfig.Tags = {
+  Developer = {
+    TagText = "[DEVELOPER]",
+    TagColor = Color3.fromRGB(100, 255, 100),
+    UsernameColor = Color3.fromRGB(255, 255, 255),
+    TextColor = Color3.fromRGB(100, 255, 100),
+  },
+}</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <!-- Feature 2: Leaderboard Tags -->
+  <div style="max-width: 900px; margin: 0 auto 3rem; padding: 2.5rem; background: #020617;">
+    <section id="leaderboard-tags" class="cctff-feature-section">
+      <div class="cctff-feature-header">
+        <div class="cctff-feature-icon gold">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h2>Leaderboard Tags</h2>
+      </div>
+      <p class="cctff-feature-description">
+        Dynamic rank positions that update in real-time. Perfect for top players, VIP tiers, or seasonal events.
+      </p>
+
+      <div class="cctff-preview">
+        <div class="cctff-preview-label">Live Preview</div>
+        <div class="cctff-preview-box">
+          <div class="cctff-preview-line">
+            <span style="color: #ffd700; font-weight: bold;">[💰 Coins #1]</span>
+            <span style="color: #ffd700; font-weight: bold; margin: 0 0.3rem;">TopPlayer:</span>
+            <span style="color: #ffd700;">I'm first place!</span>
+          </div>
+          <div class="cctff-preview-line">
+            <span style="color: #ffd700; font-weight: bold;">[💰 Coins #2]</span>
+            <span style="color: #ffd700; font-weight: bold; margin: 0 0.3rem;">Runner-Up:</span>
+            <span style="color: #ffd700;">Getting closer to #1!</span>
+          </div>
+          <div class="cctff-preview-line">
+            <span style="color: #ffd700; font-weight: bold;">[💰 Coins #3]</span>
+            <span style="color: #ffd700; font-weight: bold; margin: 0 0.3rem;">ThirdPlace:</span>
+            <span style="color: #ffd700;">Top 3 let's go!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cctff-code-section">
+        <div class="cctff-code-label">Server Usage</div>
+        <pre><code class="language-lua">local TagAPI = require(game.ReplicatedStorage.CustomChatTagsAPI)
+TagAPI:GiveLeaderboardTag(player, "TopCoins", "1")
+TagAPI:UpdateLeaderboardTag(player, "TopCoins", "2")</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <!-- Feature 3: System Messages -->
+  <div style="max-width: 900px; margin: 0 auto 3rem; padding: 2.5rem; background: #020617;">
+    <section id="system-messages" class="cctff-feature-section">
+      <div class="cctff-feature-header">
+        <div class="cctff-feature-icon yellow">
+          <i class="fas fa-bell"></i>
+        </div>
+        <h2>System Messages</h2>
+      </div>
+      <p class="cctff-feature-description">
+        Server-wide notifications without a player sender. Perfect for announcements, alerts, and events.
+      </p>
+
+      <div class="cctff-preview">
+        <div class="cctff-preview-label">Live Preview</div>
+        <div class="cctff-preview-box">
+          <div class="cctff-preview-line">
+            <span style="color: #ffff00; font-weight: bold;">[SYSTEM]</span>
+            <span style="color: #fff; margin-left: 0.5rem;">Server restart in 5 minutes!</span>
+          </div>
+          <div class="cctff-preview-line">
+            <span style="color: #ff6400; font-weight: bold;">[⚠️ ALERT]</span>
+            <span style="color: #fff; margin-left: 0.5rem;">Double XP event starting now!</span>
+          </div>
+          <div class="cctff-preview-line">
+            <span style="color: #00ff64; font-weight: bold;">[✓ SUCCESS]</span>
+            <span style="color: #fff; margin-left: 0.5rem;">Purchase successful!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cctff-code-section">
+        <div class="cctff-code-label">Server Usage</div>
+        <pre><code class="language-lua">local TagAPI = require(game.ReplicatedStorage.CustomChatTagsAPI)
+TagAPI:SendSystemMessage("ServerRestart", "System", "Restarting in 5 minutes!")</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <!-- Benefits Grid -->
+  <div style="max-width: 900px; margin: 0 auto; padding: 2.5rem; background: #020617;">
+    <section>
+      <h2 style="text-align: center; margin-bottom: 1.5rem; color: #e5e7eb;">Why Choose CCTFF?</h2>
+      <div class="cctff-benefits-grid">
+        <div class="cctff-benefit-item">
+          <span class="cctff-benefit-emoji">⚡</span>
+          <div class="cctff-benefit-title">Zero Hardcoding</div>
+          <p class="cctff-benefit-desc">All tags defined in one config table.</p>
+        </div>
+        <div class="cctff-benefit-item">
+          <span class="cctff-benefit-emoji">🔄</span>
+          <div class="cctff-benefit-title">Automatic Sync</div>
+          <p class="cctff-benefit-desc">Changes update instantly for all clients.</p>
+        </div>
+        <div class="cctff-benefit-item">
+          <span class="cctff-benefit-emoji">💾</span>
+          <div class="cctff-benefit-title">DataStore Persistence</div>
+          <p class="cctff-benefit-desc">Tags saved automatically with retry logic.</p>
+        </div>
+        <div class="cctff-benefit-item">
+          <span class="cctff-benefit-emoji">🎨</span>
+          <div class="cctff-benefit-title">Rich Styling</div>
+          <p class="cctff-benefit-desc">Control colors, strokes, and bubbles per tag.</p>
+        </div>
+        <div class="cctff-benefit-item">
+          <span class="cctff-benefit-emoji">🏆</span>
+          <div class="cctff-benefit-title">Dynamic Leaderboards</div>
+          <p class="cctff-benefit-desc">Update ranks in real-time without re-giving tags.</p>
+        </div>
+        <div class="cctff-benefit-item">
+          <span class="cctff-benefit-emoji">🔔</span>
+          <div class="cctff-benefit-title">Flexible Notifications</div>
+          <p class="cctff-benefit-desc">Per-player visibility controls for messages.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
