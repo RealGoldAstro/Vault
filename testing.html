@@ -11,15 +11,15 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    /* 5:6 ratio (same as 250h x 315w, just bigger) */
+    /* 5:6 ratio (same scale as 315x250, just larger) */
     .card {
       width: 600px;
       height: 500px;
-      background: #020617;
-      border-radius: 22px;
+      background: radial-gradient(circle at top left, #111827 0%, #020617 55%, #020617 100%);
+      border-radius: 24px;
       border: 1px solid #1f2937;
-      box-shadow: 0 22px 50px rgba(0,0,0,0.65);
-      padding: 32px 32px 28px 32px;
+      box-shadow: 0 26px 60px rgba(0,0,0,0.75);
+      padding: 32px 34px 28px 34px;
       box-sizing: border-box;
       color: #e5e7eb;
       display: flex;
@@ -31,37 +31,42 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
     }
 
     .text-col {
-      flex: 0 0 60%;
+      flex: 0 0 58%;
     }
 
     .logo-wrap {
-      width: 240px;
-      height: 240px;
-      border-radius: 32px;
-      overflow: hidden;
+      width: 210px;   /* larger logo */
+      height: 210px;
+      border-radius: 40px;
+      padding: 10px;
+      background: radial-gradient(circle at 30% 0%, #38bdf8 0%, #1d4ed8 55%, #020617 100%);
+      box-shadow: 0 18px 40px rgba(15,118,230,0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
 
     .logo-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
     .title {
-      font-size: 42px;
+      font-size: 44px;
       font-weight: 800;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       margin-bottom: 18px;
     }
 
     .mini-block {
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 16px;
       line-height: 1.4;
     }
@@ -77,22 +82,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
+      margin-top: 6px;
     }
 
     .price {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 800;
       color: #f9fafb;
     }
 
     .badge {
       font-size: 14px;
-      padding: 8px 20px;
+      padding: 8px 22px;
       border-radius: 999px;
-      background: rgba(56,189,248,0.2);
-      border: 1px solid rgba(56,189,248,0.75);
+      background: rgba(56,189,248,0.22);
+      border: 1px solid rgba(56,189,248,0.8);
       color: #bfdbfe;
+      box-shadow: 0 8px 20px rgba(56,189,248,0.35);
     }
   </style>
 </head>
