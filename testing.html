@@ -11,15 +11,15 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    /* 5:6 ratio (same scale as 315x250, just larger) */
+    /* 600x500 = same 5:6 ratio as 315x250, just bigger */
     .card {
       width: 600px;
       height: 500px;
-      background: radial-gradient(circle at top left, #111827 0%, #020617 55%, #020617 100%);
+      background: #020617;
       border-radius: 24px;
-      border: 1px solid #1f2937;
-      box-shadow: 0 26px 60px rgba(0,0,0,0.75);
-      padding: 32px 34px 28px 34px;
+      border: 1px solid #111827;
+      box-shadow: 0 22px 50px rgba(0,0,0,0.75);
+      padding: 30px 30px 26px 30px;
       box-sizing: border-box;
       color: #e5e7eb;
       display: flex;
@@ -31,23 +31,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
     }
 
     .text-col {
-      flex: 0 0 58%;
+      flex: 0 0 52%;
     }
 
     .logo-wrap {
-      width: 210px;   /* larger logo */
-      height: 210px;
+      width: 230px;          /* bigger logo */
+      height: 230px;
       border-radius: 40px;
-      padding: 10px;
-      background: radial-gradient(circle at 30% 0%, #38bdf8 0%, #1d4ed8 55%, #020617 100%);
-      box-shadow: 0 18px 40px rgba(15,118,230,0.65);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
       flex-shrink: 0;
     }
 
@@ -59,30 +54,30 @@
     }
 
     .title {
-      font-size: 44px;
+      font-size: 46px;
       font-weight: 800;
-      letter-spacing: 0.16em;
-      margin-bottom: 18px;
+      letter-spacing: 0.18em;
+      margin-bottom: 20px;
     }
 
     .mini-block {
       margin-top: 8px;
-      font-size: 16px;
-      line-height: 1.4;
+      font-size: 17px;
+      line-height: 1.45;
     }
 
     .mini-block strong {
       display: block;
-      font-size: 18px;
+      font-size: 19px;
       color: #bfdbfe;
-      margin-bottom: 1px;
+      margin-bottom: 2px;
     }
 
     .bottom-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .price {
@@ -95,10 +90,9 @@
       font-size: 14px;
       padding: 8px 22px;
       border-radius: 999px;
-      background: rgba(56,189,248,0.22);
+      background: rgba(56,189,248,0.18);
       border: 1px solid rgba(56,189,248,0.8);
       color: #bfdbfe;
-      box-shadow: 0 8px 20px rgba(56,189,248,0.35);
     }
   </style>
 </head>
