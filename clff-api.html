@@ -4,942 +4,449 @@
     <meta charset="UTF-8">
     <title>CLFF API Reference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Add favicon here -->
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="Assets/Logo.png">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- Highlight.js (optional) -->
+
+    <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <!-- Main styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-wrapper">
-        <!-- Sidebar -->
-        <aside class="sidebar no-scrollbar">
-            <div class="sidebar-inner">
-                <!-- Logo + title -->
-                <div class="sidebar-logo">
-                    <div class="sidebar-logo-icon">
-                        <img src="Assets/Logo.png" alt="Logo">
-                    </div>
-                    <div class="sidebar-logo-text">
-                        <div class="sidebar-logo-title">Vault Docs</div>
-                        <div class="sidebar-logo-subtitle">Versatile Asset Utility Library Tools</div>
-                    </div>
+<div class="main-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar no-scrollbar">
+        <div class="sidebar-inner">
+            <!-- Logo / title -->
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <img src="Assets/Logo.png" alt="Logo">
                 </div>
-
-                <!-- Nav -->
-                <div class="sidebar-nav-section" style="margin-top:0.9rem">
-                    <!-- Overview -->
-                    <div class="nav-parent-row">
-                        <a href="index.html" class="nav-link-parent">Overview</a>
-                    </div>
-
-                    <!-- CCTFF group -->
-                    <div class="nav-parent-row" data-toggle="cctff-main">
-                        <a href="cctff.html" class="nav-link-parent">CCTFF</a>
-                        <i class="fas fa-chevron-right nav-chevron"></i>
-                    </div>
-                    <ul id="cctff-main" class="nav-list nav-children hidden">
-                        <li class="nav-item">
-                            <a href="cctff.html" class="nav-child-link">Overview</a>
-                        </li>
-                        <!-- Tags sub-group -->
-                        <li class="nav-item">
-                            <div class="nav-parent-row" data-toggle="tags-sub">
-                                <a href="tags.html" class="nav-link-parent">Tags</a>
-                                <i class="fas fa-chevron-right nav-chevron"></i>
-                            </div>
-                            <ul id="tags-sub" class="nav-children hidden">
-                                <li class="nav-item"><a href="tags.html" class="nav-child-link">API index</a></li>
-                                <li class="nav-item"><a href="tags-give.html" class="nav-child-link">TagAPI:Give</a></li>
-                                <li class="nav-item"><a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a></li>
-                                <li class="nav-item"><a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a></li>
-                                <li class="nav-item"><a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a></li>
-                                <li class="nav-item"><a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a></li>
-                                <li class="nav-item"><a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a></li>
-                                <li class="nav-item"><a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a></li>
-                                <li class="nav-item"><a href="tags-isequipped.html" class="nav-child-link">TagAPI:IsEquipped</a></li>
-                                <li class="nav-item"><a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a></li>
-                                <li class="nav-item"><a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a></li>
-                                <li class="nav-item"><a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a></li>
-                                <li class="nav-item"><a href="tags-getavailableslots.html" class="nav-child-link">TagAPI:GetAvailableSlots</a></li>
-                            </ul>
-                        </li>
-                        <!-- Leaderboard Tags -->
-                        <li class="nav-item">
-                            <div class="nav-parent-row" data-toggle="leaderboard-sub">
-                                <a href="leaderboard.html" class="nav-link-parent">Leaderboard Tags</a>
-                                <i class="fas fa-chevron-right nav-chevron"></i>
-                            </div>
-                            <ul id="leaderboard-sub" class="nav-children hidden">
-                                <li class="nav-item"><a href="leaderboard.html" class="nav-child-link">API index</a></li>
-                                <li class="nav-item"><a href="leaderboard-givetag.html" class="nav-child-link">TagAPI:GiveLeaderboardTag</a></li>
-                                <li class="nav-item"><a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a></li>
-                                <li class="nav-item"><a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a></li>
-                                <li class="nav-item"><a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a></li>
-                            </ul>
-                        </li>
-                        <!-- System Messages -->
-                        <li class="nav-item">
-                            <div class="nav-parent-row" data-toggle="system-sub">
-                                <a href="system.html" class="nav-link-parent">System Messages</a>
-                                <i class="fas fa-chevron-right nav-chevron"></i>
-                            </div>
-                            <ul id="system-sub" class="nav-children hidden">
-                                <li class="nav-item"><a href="system.html" class="nav-child-link">API index</a></li>
-                                <li class="nav-item"><a href="system-sendmessage.html" class="nav-child-link">TagAPI:SendSystemMessage</a></li>
-                                <li class="nav-item"><a href="system-updatesettings.html" class="nav-child-link">TagAPI:UpdateClientSettings</a></li>
-                                <li class="nav-item"><a href="system-messageenabled.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <!-- CLFF group -->
-                    <div class="nav-parent-row" data-toggle="clff-main">
-                        <a href="clff.html" class="nav-link-parent active">CLFF</a>
-                        <i class="fas fa-chevron-right nav-chevron open"></i>
-                    </div>
-                    <ul id="clff-main" class="nav-list nav-children">
-                        <li class="nav-item">
-                            <a href="clff.html" class="nav-child-link">Overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="clff-api.html" class="nav-child-link active">API Reference</a>
-                        </li>
-                    </ul>
+                <div class="sidebar-logo-text">
+                    <div class="sidebar-logo-title">Vault Docs</div>
+                    <div class="sidebar-logo-subtitle">Versatile Asset Utility Library Tools</div>
                 </div>
             </div>
-        </aside>
 
-        <!-- Main content -->
-        <main class="content-wrapper">
-            <div class="content-inner">
-                <header>
-                    <h1>CLFF API Reference</h1>
-                    <p>
-                        All CLFF API methods live on de>_G.CLFF</code> and must be called from server scripts only. 
-                        The API provides secure stat updates with built-in validation, type checking, and rate limiting.
-                    </p>
-                </header>
+            <!-- Nav -->
+            <div class="sidebar-nav-section" style="margin-top:0.9rem;">
+                <!-- Overview -->
+                <div class="nav-parent-row">
+                    <a href="index.html" class="nav-link-parent">Overview</a>
+                </div>
 
-                <section>
-                    <h2>API Methods</h2>
-                    
-                    <!-- 2-wide grid of cards -->
-                    <div class="card-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
-                        <!-- Update -->
-                        <a href="#clff-update" class="card" style="text-decoration:none;">
-                            <h3>de>CLFF:Update</code></h3>
-                            <p>Update a stat value with validation and type checking.</p>
-                        </a>
+                <!-- CCTFF group -->
+                <div class="nav-parent-row" data-toggle="cctff-main">
+                    <a href="cctff.html" class="nav-link-parent">CCTFF</a>
+                    <i class="fas fa-chevron-right nav-chevron"></i>
+                </div>
+                <ul id="cctff-main" class="nav-list nav-children hidden">
+                    <li class="nav-item">
+                        <a href="cctff.html" class="nav-child-link">Overview</a>
+                    </li>
 
-                        <!-- Get -->
-                        <a href="#clff-get" class="card" style="text-decoration:none;">
-                            <h3>de>CLFF:Get</code></h3>
-                            <p>Retrieve the current value of a stat.</p>
-                        </a>
-
-                        <!-- Increment -->
-                        <a href="#clff-increment" class="card" style="text-decoration:none;">
-                            <h3>de>CLFF:Increment</code></h3>
-                            <p>Add or subtract from a numeric stat.</p>
-                        </a>
-
-                        <!-- Set -->
-                        <a href="#clff-set" class="card" style="text-decoration:none;">
-                            <h3>de>CLFF:Set</code></h3>
-                            <p>Alias for Update() for clarity in code.</p>
-                        </a>
-
-                        <!-- SetDebugMode -->
-                        <a href="#clff-setdebugmode" class="card" style="text-decoration:none;">
-                            <h3>de>CLFF:SetDebugMode</code></h3>
-                            <p>Enable or disable debug warnings for troubleshooting.</p>
-                        </a>
-
-                        <!-- SetSortingStat -->
-                        <a href="#clff-setsortingstat" class="card" style="text-decoration:none;">
-                            <h3>de>CLFF:SetSortingStat</code></h3>
-                            <p>Change which stat determines player order.</p>
-                        </a>
-                    </div>
-                </section>
-
-                <div class="section-divider"></div>
-
-                <!-- CLFF:Update -->
-                <section id="clff-update" class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-pencil-alt"></i>
+                    <!-- Tags group -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="tags-sub">
+                            <a href="tags.html" class="nav-link-parent">Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
                         </div>
-                        <div class="api-method-title">
-                            <h1>CLFF:Update</h1>
-                            <p>Set a stat to a specific value with server-side validation</p>
+                        <ul id="tags-sub" class="nav-children hidden">
+                            <li class="nav-item"><a href="tags.html" class="nav-child-link">API index</a></li>
+                            <li class="nav-item"><a href="tags-give.html" class="nav-child-link">TagAPI:Give</a></li>
+                            <li class="nav-item"><a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a></li>
+                            <li class="nav-item"><a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a></li>
+                            <li class="nav-item"><a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a></li>
+                            <li class="nav-item"><a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a></li>
+                            <li class="nav-item"><a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a></li>
+                            <li class="nav-item"><a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a></li>
+                            <li class="nav-item"><a href="tags-isequipped.html" class="nav-child-link">TagAPI:IsEquipped</a></li>
+                            <li class="nav-item"><a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a></li>
+                            <li class="nav-item"><a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a></li>
+                            <li class="nav-item"><a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a></li>
+                            <li class="nav-item"><a href="tags-getavailableslots.html" class="nav-child-link">TagAPI:GetAvailableSlots</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Leaderboard Tags -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="leaderboard-sub">
+                            <a href="leaderboard.html" class="nav-link-parent">Leaderboard Tags</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
                         </div>
-                    </div>
+                        <ul id="leaderboard-sub" class="nav-children hidden">
+                            <li class="nav-item"><a href="leaderboard.html" class="nav-child-link">API index</a></li>
+                            <li class="nav-item"><a href="leaderboard-givetag.html" class="nav-child-link">TagAPI:GiveLeaderboardTag</a></li>
+                            <li class="nav-item"><a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a></li>
+                            <li class="nav-item"><a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a></li>
+                            <li class="nav-item"><a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a></li>
+                        </ul>
+                    </li>
 
-                    <div class="info-section">
-                        <h2>Overview</h2>
-                        <div class="overview-grid">
-                            <div class="overview-item">
-                                <div class="overview-label">Execution Context</div>
-                                <div class="overview-value">de>Server</code></div>
-                            </div>
-                            <div class="overview-item">
-                                <div class="overview-label">Script Type</div>
-                                <div class="overview-value">Server Script</div>
-                            </div>
-                            <div class="overview-item">
-                                <div class="overview-label">Returns</div>
-                                <div class="overview-value">de>boolean</code></div>
-                            </div>
-                            <div class="overview-item">
-                                <div class="overview-label">Side Effects</div>
-                                <div class="overview-value">Updates leaderstats value, broadcasts to clients</div>
-                            </div>
+                    <!-- System Messages -->
+                    <li class="nav-item">
+                        <div class="nav-parent-row" data-toggle="system-sub">
+                            <a href="system.html" class="nav-link-parent">System Messages</a>
+                            <i class="fas fa-chevron-right nav-chevron"></i>
                         </div>
+                        <ul id="system-sub" class="nav-children hidden">
+                            <li class="nav-item"><a href="system.html" class="nav-child-link">API index</a></li>
+                            <li class="nav-item"><a href="system-sendmessage.html" class="nav-child-link">TagAPI:SendSystemMessage</a></li>
+                            <li class="nav-item"><a href="system-updatesettings.html" class="nav-child-link">TagAPI:UpdateClientSettings</a></li>
+                            <li class="nav-item"><a href="system-messageenabled.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- CLFF group -->
+                <div class="nav-parent-row" data-toggle="clff-main">
+                    <a href="clff.html" class="nav-link-parent active">CLFF</a>
+                    <i class="fas fa-chevron-right nav-chevron open"></i>
+                </div>
+                <ul id="clff-main" class="nav-list nav-children">
+                    <li class="nav-item">
+                        <a href="clff.html" class="nav-child-link">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clff-api.html" class="nav-child-link active">API Reference</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content-wrapper">
+        <div class="content-inner">
+            <header>
+                <h1>CLFF API Reference</h1>
+                <p>
+                    All CLFF API methods live on de>_G.CLFF</code> and must be called from server scripts only.
+                    The API provides secure stat updates with built-in validation, type checking, and rate limiting.
+                </p>
+            </header>
+
+            <section>
+                <h2>API Methods</h2>
+                <div class="card-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                    <a href="#clff-update" class="card" style="text-decoration:none;">
+                        <h3>de>CLFF:Update</code></h3>
+                        <p>Update a stat value with validation and type checking.</p>
+                    </a>
+                    <a href="#clff-get" class="card" style="text-decoration:none;">
+                        <h3>de>CLFF:Get</code></h3>
+                        <p>Retrieve the current value of a stat.</p>
+                    </a>
+                    <a href="#clff-increment" class="card" style="text-decoration:none;">
+                        <h3>de>CLFF:Increment</code></h3>
+                        <p>Add or subtract from a numeric stat.</p>
+                    </a>
+                    <a href="#clff-set" class="card" style="text-decoration:none;">
+                        <h3>de>CLFF:Set</code></h3>
+                        <p>Alias for Update() for clarity in code.</p>
+                    </a>
+                    <a href="#clff-setdebugmode" class="card" style="text-decoration:none;">
+                        <h3>de>CLFF:SetDebugMode</code></h3>
+                        <p>Enable or disable debug warnings for troubleshooting.</p>
+                    </a>
+                    <a href="#clff-setsortingstat" class="card" style="text-decoration:none;">
+                        <h3>de>CLFF:SetSortingStat</code></h3>
+                        <p>Change which stat determines player order.</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CLFF:Update -->
+            <section id="clff-update">
+                <h2>CLFF:Update</h2>
+                <p>
+                    The de>CLFF:Update</code> method sets a stat to a specific value with full server-side validation.
+                    This is the primary method for updating stats.
+                </p>
+
+                <h3>Syntax</h3>
+                <p>de>local success = _G.CLFF:Update(player: Player, statName: string, newValue: number)</code></p>
+
+                <table class="param-table">
+                    <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>de>player</code></td>
+                        <td>de>Player</code></td>
+                        <td>The player instance whose stat should be updated.</td>
+                    </tr>
+                    <tr>
+                        <td>de>statName</code></td>
+                        <td>de>string</code></td>
+                        <td>The name of the stat (e.g., "Coins", "Kills").</td>
+                    </tr>
+                    <tr>
+                        <td>de>newValue</code></td>
+                        <td>de>number</code></td>
+                        <td>The new value to set (validated against stat config).</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h3>Basic Usage</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-
-                    <div class="info-section">
-                        <h2>Syntax</h2>
-                        <p>de>local success = _G.CLFF:Update(player: Player, statName: string, newValue: number)</code></p>
-
-                        <table class="param-table">
-                            <thead>
-                                <tr>
-                                    <th>Parameter</th>
-                                    <th>Type</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>de>player</code></td>
-                                    <td>de>Player</code></td>
-                                    <td>The player instance whose stat should be updated</td>
-                                </tr>
-                                <tr>
-                                    <td>de>statName</code></td>
-                                    <td>de>string</code></td>
-                                    <td>The name of the stat (e.g., "Coins", "Kills")</td>
-                                </tr>
-                                <tr>
-                                    <td>de>newValue</code></td>
-                                    <td>de>number</code></td>
-                                    <td>The new value to set (validated against stat config)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2>Use Cases</h2>
-                    <div class="use-case-grid">
-                        <!-- Use Case 1 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">1</div>
-                                <h3 class="use-case-title">Basic Usage with Error Checking</h3>
-                            </div>
-                            <p class="use-case-description">Update a player's coins and verify the operation succeeded.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local success = _G.CLFF:Update(player, "Coins", 10000)
+                    <pre>de class="language-lua">local success = _G.CLFF:Update(player, "Coins", 10000)
 
 if success then
     print("Coins updated successfully")
 else
     warn("Failed to update coins")
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
 
-                        <!-- Use Case 2 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">2</div>
-                                <h3 class="use-case-title">DataStore Integration</h3>
-                            </div>
-                            <p class="use-case-description">Load saved player data and update all stats on join.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local DataStoreService = game:GetService("DataStoreService")
+                <h3>DataStore Integration</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre>de class="language-lua">local DataStoreService = game:GetService("DataStoreService")
 local PlayerData = DataStoreService:GetDataStore("PlayerData")
 
 game.Players.PlayerAdded:Connect(function(player)
-    local success, data = pcall(function()
+    local ok, data = pcall(function()
         return PlayerData:GetAsync(player.UserId)
     end)
-    
-    if success and data then
+
+    if ok and data then
         _G.CLFF:Update(player, "Coins", data.Coins or 0)
         _G.CLFF:Update(player, "Kills", data.Kills or 0)
         _G.CLFF:Update(player, "Level", data.Level or 1)
     end
 end)</code></pre>
-                            </div>
-                        </div>
+                </div>
 
-                        <!-- Use Case 3 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">3</div>
-                                <h3 class="use-case-title">Purchase System</h3>
-                            </div>
-                            <p class="use-case-description">Handle item purchases by deducting coins from player.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function handlePurchase(player, itemName, itemPrice)
-    local currentCoins = _G.CLFF:Get(player, "Coins")
-    
-    if currentCoins >= itemPrice then
-        local success = _G.CLFF:Update(player, "Coins", currentCoins - itemPrice)
-        
-        if success then
-            giveItem(player, itemName)
-            return true, "Purchase successful!"
-        end
+                <h3>Purchase System</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre>de class="language-lua">local function handlePurchase(player, itemName, itemPrice)
+    local coins = _G.CLFF:Get(player, "Coins")
+    if not coins or coins < itemPrice then
+        return false, "Not enough coins"
     end
-    return false, "Not enough coins"
+
+    local success = _G.CLFF:Update(player, "Coins", coins - itemPrice)
+    if success then
+        giveItem(player, itemName)
+        return true, "Purchase successful"
+    else
+        return false, "Failed to update coins"
+    end
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
+            </section>
 
-                        <!-- Use Case 4 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">4</div>
-                                <h3 class="use-case-title">Quest Reward System</h3>
-                            </div>
-                            <p class="use-case-description">Award multiple stats when a quest is completed.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function completeQuest(player, questData)
-    local currentCoins = _G.CLFF:Get(player, "Coins")
-    _G.CLFF:Update(player, "Coins", currentCoins + questData.CoinReward)
-    
-    local currentLevel = _G.CLFF:Get(player, "Level")
-    _G.CLFF:Update(player, "Level", currentLevel + questData.LevelReward)
-    
-    print(player.Name .. " completed: " .. questData.Name)
-end</code></pre>
-                            </div>
-                        </div>
+            <!-- CLFF:Get -->
+            <section id="clff-get">
+                <h2>CLFF:Get</h2>
+                <p>
+                    The de>CLFF:Get</code> method retrieves the current value of a player's stat.
+                    Returns de>nil</code> if the stat or player does not exist.
+                </p>
+
+                <h3>Syntax</h3>
+                <p>de>local value = _G.CLFF:Get(player: Player, statName: string)</code></p>
+
+                <h3>Check Balance</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                </section>
-
-                <div class="section-divider"></div>
-
-                <!-- CLFF:Get -->
-                <section id="clff-get" class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div class="api-method-title">
-                            <h1>CLFF:Get</h1>
-                            <p>Retrieve the current value of a player's stat</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Syntax</h2>
-                        <p>de>local value = _G.CLFF:Get(player: Player, statName: string)</code></p>
-                    </div>
-
-                    <h2>Use Cases</h2>
-                    <div class="use-case-grid">
-                        <!-- Use Case 1 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">1</div>
-                                <h3 class="use-case-title">Check Current Balance</h3>
-                            </div>
-                            <p class="use-case-description">Get a player's current coin balance.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local coins = _G.CLFF:Get(player, "Coins")
-
+                    <pre>de class="language-lua">local coins = _G.CLFF:Get(player, "Coins")
 if coins then
     print(player.Name .. " has " .. coins .. " coins")
 else
-    warn("Could not retrieve coins")
+    warn("Failed to read coins for " .. player.Name)
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
 
-                        <!-- Use Case 2 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">2</div>
-                                <h3 class="use-case-title">Permission Check</h3>
-                            </div>
-                            <p class="use-case-description">Check if player has required level to access an area.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local REQUIRED_LEVEL = 10
+                <h3>Permission Gate</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre>de class="language-lua">local REQUIRED_LEVEL = 10
 
 local function canEnterArea(player)
     local level = _G.CLFF:Get(player, "Level")
-    
     if level and level >= REQUIRED_LEVEL then
         return true
     else
-        return false, "You need level " .. REQUIRED_LEVEL
+        return false, "You need level " .. REQUIRED_LEVEL .. " to enter"
     end
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
+            </section>
 
-                        <!-- Use Case 3 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">3</div>
-                                <h3 class="use-case-title">Leaderboard Generation</h3>
-                            </div>
-                            <p class="use-case-description">Get all players' stats to create a custom leaderboard.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function getTopPlayers(statName, count)
-    local playerStats = {}
-    
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        local value = _G.CLFF:Get(player, statName)
-        if value then
-            table.insert(playerStats, {Name = player.Name, Value = value})
-        end
-    end
-    
-    table.sort(playerStats, function(a, b) return a.Value > b.Value end)
-    return playerStats
-end</code></pre>
-                            </div>
-                        </div>
+            <!-- CLFF:Increment -->
+            <section id="clff-increment">
+                <h2>CLFF:Increment</h2>
+                <p>
+                    The de>CLFF:Increment</code> method adds or subtracts from a numeric stat.
+                    Use negative values to decrement.
+                </p>
+
+                <h3>Syntax</h3>
+                <p>de>local success = _G.CLFF:Increment(player: Player, statName: string, amount: number)</code></p>
+
+                <h3>Reward Example</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                </section>
-
-                <div class="section-divider"></div>
-
-                <!-- CLFF:Increment -->
-                <section id="clff-increment" class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-plus-circle"></i>
-                        </div>
-                        <div class="api-method-title">
-                            <h1>CLFF:Increment</h1>
-                            <p>Add or subtract from a numeric stat</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Syntax</h2>
-                        <p>de>local success = _G.CLFF:Increment(player: Player, statName: string, amount: number)</code></p>
-                    </div>
-
-                    <h2>Use Cases</h2>
-                    <div class="use-case-grid">
-                        <!-- Use Case 1 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">1</div>
-                                <h3 class="use-case-title">Basic Reward</h3>
-                            </div>
-                            <p class="use-case-description">Give players coins for completing an action.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">-- Player defeats an enemy
+                    <pre>de class="language-lua">-- Player defeats an enemy
 _G.CLFF:Increment(player, "Coins", 100)
-_G.CLFF:Increment(player, "Kills", 1)
+_G.CLFF:Increment(player, "Kills", 1)</code></pre>
+                </div>
 
-print(player.Name .. " earned 100 coins!")</code></pre>
-                            </div>
-                        </div>
-
-                        <!-- Use Case 2 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">2</div>
-                                <h3 class="use-case-title">Combat System</h3>
-                            </div>
-                            <p class="use-case-description">Track kills and deaths in PvP combat.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function onPlayerKilled(killer, victim)
-    -- Update killer stats
-    _G.CLFF:Increment(killer, "Kills", 1)
-    _G.CLFF:Increment(killer, "Coins", 25)
-    
-    -- Update victim stats
-    _G.CLFF:Increment(victim, "Deaths", 1)
-end</code></pre>
-                            </div>
-                        </div>
-
-                        <!-- Use Case 3 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">3</div>
-                                <h3 class="use-case-title">Penalty System</h3>
-                            </div>
-                            <p class="use-case-description">Deduct coins for penalties using negative increments.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function applyDeathPenalty(player)
-    local coins = _G.CLFF:Get(player, "Coins")
-    local penalty = math.floor(coins * 0.1) -- 10% penalty
-    
+                <h3>Penalty Example</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre>de class="language-lua">local function applyDeathPenalty(player)
+    local coins = _G.CLFF:Get(player, "Coins") or 0
+    local penalty = math.floor(coins * 0.1)
     _G.CLFF:Increment(player, "Coins", -penalty)
-    print(player.Name .. " lost " .. penalty .. " coins")
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
+            </section>
 
-                        <!-- Use Case 4 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">4</div>
-                                <h3 class="use-case-title">Daily Login Bonus</h3>
-                            </div>
-                            <p class="use-case-description">Reward players for logging in with streak bonuses.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function grantDailyBonus(player, dayStreak)
-    local baseReward = 100
-    local streakBonus = dayStreak * 50
-    local totalReward = baseReward + streakBonus
-    
-    _G.CLFF:Increment(player, "Coins", totalReward)
-    print("Day " .. dayStreak .. " bonus: " .. totalReward .. " coins!")
-end</code></pre>
-                            </div>
-                        </div>
+            <!-- CLFF:Set -->
+            <section id="clff-set">
+                <h2>CLFF:Set</h2>
+                <p>
+                    The de>CLFF:Set</code> method is a convenience alias for de>CLFF:Update</code>.
+                </p>
+
+                <h3>Syntax</h3>
+                <p>de>local success = _G.CLFF:Set(player: Player, statName: string, value: number)</code></p>
+
+                <h3>Reset Stats</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                </section>
-
-                <div class="section-divider"></div>
-
-                <!-- CLFF:Set -->
-                <section id="clff-set" class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="api-method-title">
-                            <h1>CLFF:Set</h1>
-                            <p>Alias for Update() - explicitly set a stat value</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Syntax</h2>
-                        <p>de>local success = _G.CLFF:Set(player: Player, statName: string, value: number)</code></p>
-                    </div>
-
-                    <h2>Use Cases</h2>
-                    <div class="use-case-grid">
-                        <!-- Use Case 1 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">1</div>
-                                <h3 class="use-case-title">Set Specific Level</h3>
-                            </div>
-                            <p class="use-case-description">Set a player's level to a specific value.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">-- Reset to level 1
-_G.CLFF:Set(player, "Level", 1)
-
--- Set to max level
-_G.CLFF:Set(player, "Level", 100)</code></pre>
-                            </div>
-                        </div>
-
-                        <!-- Use Case 2 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">2</div>
-                                <h3 class="use-case-title">Admin Commands</h3>
-                            </div>
-                            <p class="use-case-description">Allow admins to set player stats directly.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function adminSetStat(admin, target, stat, value)
-    if not isAdmin(admin) then
-        return false, "No permission"
-    end
-    
-    local success = _G.CLFF:Set(target, stat, value)
-    return success, "Set " .. stat .. " to " .. value
-end</code></pre>
-                            </div>
-                        </div>
-
-                        <!-- Use Case 3 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">3</div>
-                                <h3 class="use-case-title">Reset All Stats</h3>
-                            </div>
-                            <p class="use-case-description">Reset all player stats to default values.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function resetPlayerStats(player)
+                    <pre>de class="language-lua">local function resetStats(player)
     _G.CLFF:Set(player, "Coins", 0)
     _G.CLFF:Set(player, "Kills", 0)
     _G.CLFF:Set(player, "Deaths", 0)
     _G.CLFF:Set(player, "Level", 1)
-    _G.CLFF:Set(player, "Wins", 0)
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
+            </section>
+
+            <!-- CLFF:SetDebugMode -->
+            <section id="clff-setdebugmode">
+                <h2>CLFF:SetDebugMode</h2>
+                <p>
+                    Enable or disable debug logging inside CLFF.
+                </p>
+
+                <h3>Syntax</h3>
+                <p>de>_G.CLFF:SetDebugMode(enabled: boolean)</code></p>
+
+                <h3>Studio Only Debug</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                </section>
-
-                <div class="section-divider"></div>
-
-                <!-- CLFF:SetDebugMode -->
-                <section id="clff-setdebugmode" class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-bug"></i>
-                        </div>
-                        <div class="api-method-title">
-                            <h1>CLFF:SetDebugMode</h1>
-                            <p>Enable or disable debug warnings for troubleshooting</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Syntax</h2>
-                        <p>de>_G.CLFF:SetDebugMode(enabled: boolean)</code></p>
-                    </div>
-
-                    <h2>Use Cases</h2>
-                    <div class="use-case-grid">
-                        <!-- Use Case 1 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">1</div>
-                                <h3 class="use-case-title">Enable Debug Mode</h3>
-                            </div>
-                            <p class="use-case-description">Turn on debug warnings during development.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">_G.CLFF:SetDebugMode(true)
-
--- Now see detailed logs
-_G.CLFF:Update(player, "Coins", 1000)
--- Output: [CLFF] Stat updated: PlayerName - Coins = 1000</code></pre>
-                            </div>
-                        </div>
-
-                        <!-- Use Case 2 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">2</div>
-                                <h3 class="use-case-title">Production Mode</h3>
-                            </div>
-                            <p class="use-case-description">Disable debug mode for production releases.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">-- Disable debug before publishing
-_G.CLFF:SetDebugMode(false)</code></pre>
-                            </div>
-                        </div>
-
-                        <!-- Use Case 3 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">3</div>
-                                <h3 class="use-case-title">Auto-Toggle in Studio</h3>
-                            </div>
-                            <p class="use-case-description">Automatically enable debug mode only in Studio.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local RunService = game:GetService("RunService")
+                    <pre>de class="language-lua">local RunService = game:GetService("RunService")
 
 if RunService:IsStudio() then
     _G.CLFF:SetDebugMode(true)
-    warn("[CLFF] Debug mode enabled")
 else
     _G.CLFF:SetDebugMode(false)
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
+            </section>
+
+            <!-- CLFF:SetSortingStat -->
+            <section id="clff-setsortingstat">
+                <h2>CLFF:SetSortingStat</h2>
+                <p>
+                    Change which stat is used to sort players in the CLFF leaderboard UI.
+                </p>
+
+                <h3>Syntax</h3>
+                <p>de>local success = _G.CLFF:SetSortingStat(statName: string)</code></p>
+
+                <h3>Example</h3>
+                <div class="code-block-wrapper">
+                    <div class="code-block-header">
+                        <span>Lua</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
-                </section>
-
-                <div class="section-divider"></div>
-
-                <!-- CLFF:SetSortingStat -->
-                <section id="clff-setsortingstat" class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-sort-amount-down"></i>
-                        </div>
-                        <div class="api-method-title">
-                            <h1>CLFF:SetSortingStat</h1>
-                            <p>Change which stat determines player order on leaderboard</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Syntax</h2>
-                        <p>de>local success = _G.CLFF:SetSortingStat(statName: string)</code></p>
-                    </div>
-
-                    <h2>Use Cases</h2>
-                    <div class="use-case-grid">
-                        <!-- Use Case 1 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">1</div>
-                                <h3 class="use-case-title">Change Sort Order</h3>
-                            </div>
-                            <p class="use-case-description">Switch leaderboard sorting from Coins to Kills.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local success = _G.CLFF:SetSortingStat("Kills")
-
-if success then
-    print("Leaderboard now sorted by Kills")
+                    <pre>de class="language-lua">local ok = _G.CLFF:SetSortingStat("Kills")
+if ok then
+    print("Now sorting by Kills")
 end</code></pre>
-                            </div>
-                        </div>
+                </div>
+            </section>
 
-                        <!-- Use Case 2 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">2</div>
-                                <h3 class="use-case-title">Event-Based Sorting</h3>
-                            </div>
-                            <p class="use-case-description">Change sorting based on game events.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function startPvPEvent()
-    _G.CLFF:SetSortingStat("Kills")
-    print("PvP Event! Sorted by Kills")
-end
+        </div>
+    </main>
+</div>
 
-local function endPvPEvent()
-    _G.CLFF:SetSortingStat("Coins")
-    print("Event ended! Sorted by Coins")
-end</code></pre>
-                            </div>
-                        </div>
+<script>
+    if (window.hljs) {
+        hljs.highlightAll();
+    }
 
-                        <!-- Use Case 3 -->
-                        <div class="use-case-card">
-                            <div class="use-case-header">
-                                <div class="use-case-number">3</div>
-                                <h3 class="use-case-title">Seasonal Leaderboard</h3>
-                            </div>
-                            <p class="use-case-description">Rotate sorting based on day of week.</p>
-                            <div class="code-block-wrapper">
-                                <div class="code-block-header">
-                                    <span>Lua</span>
-                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                </div>
-                                <pre>de class="language-lua">local function updateSeasonalSort()
-    local dayOfWeek = os.date("*t").wday
-    
-    if dayOfWeek == 1 or dayOfWeek == 7 then
-        _G.CLFF:SetSortingStat("Wins") -- Weekend
-    else
-        _G.CLFF:SetSortingStat("Coins") -- Weekday
-    end
-end</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    // Sidebar toggle
+    document.querySelectorAll('.nav-parent-row').forEach(row => {
+        const id = row.getAttribute('data-toggle');
+        const target = id ? document.getElementById(id) : null;
+        const chevron = row.querySelector('.nav-chevron');
 
-                <div class="section-divider"></div>
+        row.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') return;
+            if (!target) return;
 
-                <!-- Security Section -->
-                <section class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="api-method-title">
-                            <h1>Security & Validation</h1>
-                            <p>Built-in protection against exploits and data corruption</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Built-In Security Features</h2>
-                        <ul>
-                            <li><strong>Server-Only Execution:</strong> API can only be called from server scripts</li>
-                            <li><strong>Type Validation:</strong> Checks value matches stat's ValueType (IntValue, NumberValue, etc.)</li>
-                            <li><strong>Sanity Checks:</strong> Rejects NaN, Infinity, and out-of-bounds values (-1e15 to 1e15)</li>
-                            <li><strong>Stat Name Validation:</strong> Only allows stats defined in CLFFConfig</li>
-                            <li><strong>Player Validation:</strong> Ensures player exists and has leaderstats</li>
-                            <li><strong>Rate Limiting:</strong> Throttles updates to prevent spam (configurable via UpdateThrottle)</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Test Panel Security</h2>
-                        <p><strong>Important:</strong> Remove de>CLFFTestPanel.client.lua</code> before production! This test UI allows players to set their own stats.</p>
-
-                        <div class="code-block-wrapper">
-                            <div class="code-block-header">
-                                <span>Files to Delete Before Release</span>
-                            </div>
-                            <pre>de>❌ DELETE THESE:
-- ServerScriptService/CLFF/TestCommands.server.lua
-- ServerScriptService/CLFF/CLFFBenchmark.server.lua  
-- StarterPlayerScripts/CLFF/CLFFTestPanel.client.lua
-
-✅ KEEP THESE:
-- ReplicatedStorage/CLFF/CLFFConfig.lua
-- ServerScriptService/CLFF/CLFFServer.server.lua
-- StarterPlayerScripts/CLFF/CLFFClient.client.lua</code></pre>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="section-divider"></div>
-
-                <!-- Legacy API -->
-                <section class="api-method-card">
-                    <div class="api-method-header">
-                        <div class="api-method-icon">
-                            <i class="fas fa-history"></i>
-                        </div>
-                        <div class="api-method-title">
-                            <h1>Legacy API Compatibility</h1>
-                            <p>Backwards compatible with old method names</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section">
-                        <h2>Supported Aliases</h2>
-                        <table class="param-table">
-                            <thead>
-                                <tr>
-                                    <th>New Method</th>
-                                    <th>Legacy Alias</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>de>CLFF:Update()</code></td>
-                                    <td>de>CLFF:UpdateStat()</code></td>
-                                </tr>
-                                <tr>
-                                    <td>de>CLFF:Get()</code></td>
-                                    <td>de>CLFF:GetStat()</code></td>
-                                </tr>
-                                <tr>
-                                    <td>de>CLFF:Increment()</code></td>
-                                    <td>de>CLFF:IncrementStat()</code></td>
-                                </tr>
-                                <tr>
-                                    <td>de>CLFF:Set()</code></td>
-                                    <td>de>CLFF:SetStat()</code></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
-        </main>
-    </div>
-
-    <script>
-        if (window.hljs) {
-            hljs.highlightAll();
-        }
-
-        // Sidebar toggles
-        document.querySelectorAll('.nav-parent-row').forEach(row => {
-            const id = row.getAttribute('data-toggle');
-            const target = id ? document.getElementById(id) : null;
-            const chevron = row.querySelector('.nav-chevron');
-
-            row.addEventListener('click', (e) => {
-                if (e.target.tagName.toLowerCase() === 'a') return;
-                if (!target) return;
-
-                const hidden = target.classList.contains('hidden');
-                target.classList.toggle('hidden', !hidden);
-                if (chevron) {
-                    chevron.classList.toggle('open', hidden);
-                }
-            });
+            const hidden = target.classList.contains('hidden');
+            target.classList.toggle('hidden', !hidden);
+            if (chevron) chevron.classList.toggle('open', hidden);
         });
+    });
 
-        // Copy code button
-        function copyCode(button) {
-            const code = button.parentElement.nextElementSibling.textContent;
-            navigator.clipboard.writeText(code).then(() => {
-                button.textContent = 'Copied!';
-                setTimeout(() => button.textContent = 'Copy', 2000);
-            });
-        }
-    </script>
+    function copyCode(button) {
+        const code = button.parentElement.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            const old = button.textContent;
+            button.textContent = "Copied!";
+            setTimeout(() => button.textContent = old, 1200);
+        });
+    }
+</script>
 </body>
 </html>
