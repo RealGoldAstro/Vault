@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLFF API Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add favicon here -->
+    <link rel="icon" type="image/png" href="Assets/Logo.png">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Highlight.js (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Sidebar (same as clff.html) -->
+        <aside class="sidebar no-scrollbar">
+            <div class="sidebar-inner">
+                <!-- Logo + title -->
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">
+                        <img src="Assets/Logo.png" alt="Logo">
+                    </div>
+                    <div class="sidebar-logo-text">
+                        <div class="sidebar-logo-title">Vault Docs</div>
+                        <div class="sidebar-logo-subtitle">Versatile Asset Utility Library Tools</div>
+                    </div>
+                </div>
+
+                <!-- Nav -->
+                <div class="sidebar-nav-section" style="margin-top:0.9rem">
+                    <!-- Overview -->
+                    <div class="nav-parent-row">
+                        <a href="index.html" class="nav-link-parent">Overview</a>
+                    </div>
+
+                    <!-- CCTFF group -->
+                    <div class="nav-parent-row" data-toggle="cctff-main">
+                        <a href="cctff.html" class="nav-link-parent">CCTFF</a>
+                        <i class="fas fa-chevron-right nav-chevron"></i>
+                    </div>
+                    <ul id="cctff-main" class="nav-list nav-children hidden">
+                        <li class="nav-item">
+                            <a href="cctff.html" class="nav-child-link">Overview</a>
+                        </li>
+                        <!-- Tags sub-group -->
+                        <li class="nav-item">
+                            <div class="nav-parent-row" data-toggle="tags-sub">
+                                <a href="tags.html" class="nav-link-parent">Tags</a>
+                                <i class="fas fa-chevron-right nav-chevron"></i>
+                            </div>
+                            <ul id="tags-sub" class="nav-children hidden">
+                                <li class="nav-item"><a href="tags.html" class="nav-child-link">API index</a></li>
+                                <li class="nav-item"><a href="tags-give.html" class="nav-child-link">TagAPI:Give</a></li>
+                                <li class="nav-item"><a href="tags-remove.html" class="nav-child-link">TagAPI:Remove</a></li>
+                                <li class="nav-item"><a href="tags-equip.html" class="nav-child-link">TagApi:Epuip</a></li>
+                                <li class="nav-item"><a href="tags-unequip.html" class="nav-child-link">TagAPI:Unequip</a></li>
+                                <li class="nav-item"><a href="tags-getowned.html" class="nav-child-link">TagAPI:GetOwned</a></li>
+                                <li class="nav-item"><a href="tags-equipped.html" class="nav-child-link">TagAPI:GetEquipped</a></li>
+                                <li class="nav-item"><a href="tags-hastag.html" class="nav-child-link">TagAPI:HasTag</a></li>
+                                <li class="nav-item"><a href="tags-isequipped.html" class="nav-child-link">TagAPI:IsEquipped</a></li>
+                                <li class="nav-item"><a href="tags-clearall.html" class="nav-child-link">TagAPI:ClearAll</a></li>
+                                <li class="nav-item"><a href="tags-unequipall.html" class="nav-child-link">TagAPI:UnequipAll</a></li>
+                                <li class="nav-item"><a href="tags-getmaxslots.html" class="nav-child-link">TagAPI:GetMaxSlots</a></li>
+                                <li class="nav-item"><a href="tags-getavailableslots.html" class="nav-child-link">TagAPI:GetAvailableSlots</a></li>
+                            </ul>
+                        </li>
+                        <!-- Leaderboard Tags -->
+                        <li class="nav-item">
+                            <div class="nav-parent-row" data-toggle="leaderboard-sub">
+                                <a href="leaderboard.html" class="nav-link-parent">Leaderboard Tags</a>
+                                <i class="fas fa-chevron-right nav-chevron"></i>
+                            </div>
+                            <ul id="leaderboard-sub" class="nav-children hidden">
+                                <li class="nav-item"><a href="leaderboard.html" class="nav-child-link">API index</a></li>
+                                <li class="nav-item"><a href="leaderboard-givetag.html" class="nav-child-link">TagAPI:GiveLeaderboardTag</a></li>
+                                <li class="nav-item"><a href="leaderboard-updatetag.html" class="nav-child-link">TagAPI:UpdateLeaderboardTag</a></li>
+                                <li class="nav-item"><a href="leaderboard-removetag.html" class="nav-child-link">TagAPI:RemoveLeaderboardTag</a></li>
+                                <li class="nav-item"><a href="leaderboard-gettag.html" class="nav-child-link">TagAPI:GetLeaderboardTagText</a></li>
+                            </ul>
+                        </li>
+                        <!-- System Messages -->
+                        <li class="nav-item">
+                            <div class="nav-parent-row" data-toggle="system-sub">
+                                <a href="system.html" class="nav-link-parent">System Messages</a>
+                                <i class="fas fa-chevron-right nav-chevron"></i>
+                            </div>
+                            <ul id="system-sub" class="nav-children hidden">
+                                <li class="nav-item"><a href="system.html" class="nav-child-link">API index</a></li>
+                                <li class="nav-item"><a href="system-sendmessage.html" class="nav-child-link">TagAPI:SendSystemMessage</a></li>
+                                <li class="nav-item"><a href="system-updatesettings.html" class="nav-child-link">TagAPI:UpdateClientSettings</a></li>
+                                <li class="nav-item"><a href="system-messageenabled.html" class="nav-child-link">TagAPI:IsSystemMessageEnabled</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- CLFF group -->
+                    <div class="nav-parent-row" data-toggle="clff-main">
+                        <a href="clff.html" class="nav-link-parent active">CLFF</a>
+                        <i class="fas fa-chevron-right nav-chevron open"></i>
+                    </div>
+                    <ul id="clff-main" class="nav-list nav-children">
+                        <li class="nav-item">
+                            <a href="clff.html" class="nav-child-link">Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="clff-api.html" class="nav-child-link active">API Reference</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="content-wrapper">
+            <div class="content-inner">
+                <header>
+                    <h1>CLFF API Reference</h1>
+                    <p>
+                        All CLFF API methods live on <code>_G.CLFF</code> and must be called from server scripts only. 
+                        The API provides secure stat updates with built-in validation, type checking, and rate limiting.
+                    </p>
+                </header>
+
+                <section>
+                    <h2>API Methods</h2>
+                    
+                    <!-- 2-wide grid of cards -->
+                    <div class="card-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                        <!-- Update -->
+                        <div class="card">
+                            <h3><code>CLFF:Update</code></h3>
+                            <p>Update a stat value with validation and type checking.</p>
+                            <div class="cctff-code-section" style="margin-top: 1rem;">
+                                <pre><code class="language-lua">_G.CLFF:Update(player, "Coins", 5000)</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Get -->
+                        <div class="card">
+                            <h3><code>CLFF:Get</code></h3>
+                            <p>Retrieve the current value of a stat.</p>
+                            <div class="cctff-code-section" style="margin-top: 1rem;">
+                                <pre><code class="language-lua">local coins = _G.CLFF:Get(player, "Coins")</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Increment -->
+                        <div class="card">
+                            <h3><code>CLFF:Increment</code></h3>
+                            <p>Add or subtract from a numeric stat.</p>
+                            <div class="cctff-code-section" style="margin-top: 1rem;">
+                                <pre><code class="language-lua">_G.CLFF:Increment(player, "Coins", 100)</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Set -->
+                        <div class="card">
+                            <h3><code>CLFF:Set</code></h3>
+                            <p>Alias for Update() for clarity in code.</p>
+                            <div class="cctff-code-section" style="margin-top: 1rem;">
+                                <pre><code class="language-lua">_G.CLFF:Set(player, "Level", 50)</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- SetDebugMode -->
+                        <div class="card">
+                            <h3><code>CLFF:SetDebugMode</code></h3>
+                            <p>Enable or disable debug warnings for troubleshooting.</p>
+                            <div class="cctff-code-section" style="margin-top: 1rem;">
+                                <pre><code class="language-lua">_G.CLFF:SetDebugMode(true)</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- SetSortingStat -->
+                        <div class="card">
+                            <h3><code>CLFF:SetSortingStat</code></h3>
+                            <p>Change which stat determines player order.</p>
+                            <div class="cctff-code-section" style="margin-top: 1rem;">
+                                <pre><code class="language-lua">_G.CLFF:SetSortingStat("Kills")</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detailed Method Documentation -->
+                <section>
+                    <h2>CLFF:Update</h2>
+                    <p>
+                        The <code>CLFF:Update</code> method sets a stat to a specific value with full server-side validation.
+                        This is the primary method for updating stats.
+                    </p>
+
+                    <h3>Overview</h3>
+                    <div class="overview-grid">
+                        <div class="overview-item">
+                            <div class="overview-label">Execution Context</div>
+                            <div class="overview-value"><code>Server</code></div>
+                        </div>
+                        <div class="overview-item">
+                            <div class="overview-label">Script Type</div>
+                            <div class="overview-value">Server Script</div>
+                        </div>
+                        <div class="overview-item">
+                            <div class="overview-label">Returns</div>
+                            <div class="overview-value"><code>boolean</code></div>
+                        </div>
+                        <div class="overview-item">
+                            <div class="overview-label">Side Effects</div>
+                            <div class="overview-value">Updates leaderstats value, broadcasts to clients</div>
+                        </div>
+                    </div>
+
+                    <h3>Syntax</h3>
+                    <p><code>local success = _G.CLFF:Update(player: Player, statName: string, newValue: number)</code></p>
+
+                    <table class="param-table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>player</code></td>
+                                <td><code>Player</code></td>
+                                <td>The player instance whose stat should be updated</td>
+                            </tr>
+                            <tr>
+                                <td><code>statName</code></td>
+                                <td><code>string</code></td>
+                                <td>The name of the stat (e.g., "Coins", "Kills")</td>
+                            </tr>
+                            <tr>
+                                <td><code>newValue</code></td>
+                                <td><code>number</code></td>
+                                <td>The new value to set (validated against stat config)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Return Values</h3>
+                    <table class="param-table">
+                        <thead>
+                            <tr>
+                                <th>Return</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>success</code></td>
+                                <td><code>boolean</code></td>
+                                <td>True if update succeeded, false if validation failed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Basic Usage</h3>
+                    <p>Update a player's coins.</p>
+                    <div class="code-block-wrapper">
+                        <div class="code-block-header">
+                            <span>Lua</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code>local success = _G.CLFF:Update(player, "Coins", 10000)
+
+if success then
+    print("Coins updated successfully")
+else
+    warn("Failed to update coins")
+end</code></pre>
+                    </div>
+
+                    <h3>DataStore Integration</h3>
+                    <p>Load saved data and update stats.</p>
+                    <div class="code-block-wrapper">
+                        <div class="code-block-header">
+                            <span>Lua</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code>local function loadPlayerData(player)
+    local data = DataStore:GetAsync(player.UserId)
+    
+    if data then
+        _G.CLFF:Update(player, "Coins", data.Coins or 0)
+        _G.CLFF:Update(player, "Kills", data.Kills or 0)
+        _G.CLFF:Update(player, "Deaths", data.Deaths or 0)
+        _G.CLFF:Update(player, "Level", data.Level or 1)
+        _G.CLFF:Update(player, "Wins", data.Wins or 0)
+    end
+end</code></pre>
+                    </div>
+
+                    <h3>Purchase Handler</h3>
+                    <p>Update stats after a successful purchase.</p>
+                    <div class="code-block-wrapper">
+                        <div class="code-block-header">
+                            <span>Lua</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code>local function handlePurchase(player, itemPrice)
+    local currentCoins = _G.CLFF:Get(player, "Coins")
+    
+    if currentCoins >= itemPrice then
+        local newCoins = currentCoins - itemPrice
+        local success = _G.CLFF:Update(player, "Coins", newCoins)
+        
+        if success then
+            return true, "Purchase successful"
+        else
+            return false, "Failed to update coins"
+        end
+    else
+        return false, "Not enough coins"
+    end
+end</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CLFF:Increment</h2>
+                    <p>
+                        The <code>CLFF:Increment</code> method adds or subtracts from a numeric stat. 
+                        Perfect for rewards, penalties, or continuous stat updates.
+                    </p>
+
+                    <h3>Syntax</h3>
+                    <p><code>local success = _G.CLFF:Increment(player: Player, statName: string, amount: number)</code></p>
+
+                    <h3>Basic Usage</h3>
+                    <p>Add 100 coins to a player.</p>
+                    <div class="code-block-wrapper">
+                        <div class="code-block-header">
+                            <span>Lua</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code>_G.CLFF:Increment(player, "Coins", 100)</code></pre>
+                    </div>
+
+                    <h3>Negative Increment (Decrement)</h3>
+                    <p>Subtract coins for a penalty.</p>
+                    <div class="code-block-wrapper">
+                        <div class="code-block-header">
+                            <span>Lua</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code>_G.CLFF:Increment(player, "Coins", -50)  -- Subtract 50</code></pre>
+                    </div>
+
+                    <h3>Kill/Death Tracking</h3>
+                    <p>Update combat stats automatically.</p>
+                    <div class="code-block-wrapper">
+                        <div class="code-block-header">
+                            <span>Lua</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code>-- When player gets a kill
+_G.CLFF:Increment(killer, "Kills", 1)
+_G.CLFF:Increment(victim, "Deaths", 1)
+
+-- Award bonus coins for kills
+_G.CLFF:Increment(killer, "Coins", 25)</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Security & Validation</h2>
+                    <p>
+                        CLFF includes multiple layers of security to prevent exploits and ensure data integrity.
+                    </p>
+
+                    <h3>Built-In Security Features</h3>
+                    <ul>
+                        <li><strong>Server-Only Execution:</strong> API can only be called from server scripts</li>
+                        <li><strong>Type Validation:</strong> Checks value matches stat's ValueType (IntValue, NumberValue, etc.)</li>
+                        <li><strong>Sanity Checks:</strong> Rejects NaN, Infinity, and out-of-bounds values (-1e15 to 1e15)</li>
+                        <li><strong>Stat Name Validation:</strong> Only allows stats defined in CLFFConfig</li>
+                        <li><strong>Player Validation:</strong> Ensures player exists and has leaderstats</li>
+                        <li><strong>Rate Limiting:</strong> Throttles updates to prevent spam (configurable via UpdateThrottle)</li>
+                    </ul>
+
+                    <h3>Test Panel Security</h3>
+                    <p><strong>Important:</strong> Remove <code>CLFFTestPanel.client.lua</code> before production! This test UI allows players to set their own stats.</p>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-block-header">
+                            <span>Files to Delete Before Release</span>
+                        </div>
+                        <pre><code>❌ DELETE THESE:
+- ServerScriptService/CLFF/TestCommands.server.lua
+- ServerScriptService/CLFF/CLFFBenchmark.server.lua  
+- StarterPlayerScripts/CLFF/CLFFTestPanel.client.lua
+
+✅ KEEP THESE:
+- ReplicatedStorage/CLFF/CLFFConfig.lua
+- ServerScriptService/CLFF/CLFFServer.server.lua
+- StarterPlayerScripts/CLFF/CLFFClient.client.lua</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Legacy API Compatibility</h2>
+                    <p>
+                        For backwards compatibility, old method names are still supported:
+                    </p>
+
+                    <table class="param-table">
+                        <thead>
+                            <tr>
+                                <th>New Method</th>
+                                <th>Legacy Alias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>CLFF:Update()</code></td>
+                                <td><code>CLFF:UpdateStat()</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>CLFF:Get()</code></td>
+                                <td><code>CLFF:GetStat()</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>CLFF:Increment()</code></td>
+                                <td><code>CLFF:IncrementStat()</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>CLFF:Set()</code></td>
+                                <td><code>CLFF:SetStat()</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        if (window.hljs) {
+            hljs.highlightAll();
+        }
+
+        // Sidebar toggles
+        document.querySelectorAll('.nav-parent-row').forEach(row => {
+            const id = row.getAttribute('data-toggle');
+            const target = id ? document.getElementById(id) : null;
+            const chevron = row.querySelector('.nav-chevron');
+
+            row.addEventListener('click', (e) => {
+                if (e.target.tagName.toLowerCase() === 'a') return;
+                if (!target) return;
+
+                const hidden = target.classList.contains('hidden');
+                target.classList.toggle('hidden', !hidden);
+                if (chevron) {
+                    chevron.classList.toggleopen', hidden);
+                }
+            });
+        });
+
+        // Copy code button
+        function copyCode(button) {
+            const code = button.parentElement.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => button.textContent = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
