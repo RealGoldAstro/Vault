@@ -125,9 +125,9 @@
                 </header>
 
                 <section>
-                    <h2>API</h2>
+                    <h2>API Methods</h2>
                     
-                    <!-- 2-wide grid of cards like leaderboard.html -->
+                    <!-- 2-wide grid of cards -->
                     <div class="card-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
                         <!-- Update -->
                         <a href="#clff-update" class="card" style="text-decoration:none;">
@@ -167,106 +167,111 @@
                     </div>
                 </section>
 
-                <!-- CLFF:Update -->
-                <section id="clff-update">
-                    <h1>CLFF:Update</h1>
-                    <p>
-                        The de>CLFF:Update</code> method sets a stat to a specific value with full server-side validation.
-                        This is the primary method for updating stats.
-                    </p>
+                <div class="section-divider"></div>
 
-                    <h2>Overview</h2>
-                    <div class="overview-grid">
-                        <div class="overview-item">
-                            <div class="overview-label">Execution Context</div>
-                            <div class="overview-value">de>Server</code></div>
+                <!-- CLFF:Update -->
+                <section id="clff-update" class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-pencil-alt"></i>
                         </div>
-                        <div class="overview-item">
-                            <div class="overview-label">Script Type</div>
-                            <div class="overview-value">Server Script</div>
-                        </div>
-                        <div class="overview-item">
-                            <div class="overview-label">Returns</div>
-                            <div class="overview-value">de>boolean</code></div>
-                        </div>
-                        <div class="overview-item">
-                            <div class="overview-label">Side Effects</div>
-                            <div class="overview-value">Updates leaderstats value, broadcasts to clients</div>
+                        <div class="api-method-title">
+                            <h1>CLFF:Update</h1>
+                            <p>Set a stat to a specific value with server-side validation</p>
                         </div>
                     </div>
 
-                    <h2>Syntax</h2>
-                    <p>de>local success = _G.CLFF:Update(player: Player, statName: string, newValue: number)</code></p>
-
-                    <table class="param-table">
-                        <thead>
-                            <tr>
-                                <th>Parameter</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>de>player</code></td>
-                                <td>de>Player</code></td>
-                                <td>The player instance whose stat should be updated</td>
-                            </tr>
-                            <tr>
-                                <td>de>statName</code></td>
-                                <td>de>string</code></td>
-                                <td>The name of the stat (e.g., "Coins", "Kills")</td>
-                            </tr>
-                            <tr>
-                                <td>de>newValue</code></td>
-                                <td>de>number</code></td>
-                                <td>The new value to set (validated against stat config)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>Return Values</h2>
-                    <table class="param-table">
-                        <thead>
-                            <tr>
-                                <th>Return</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>de>success</code></td>
-                                <td>de>boolean</code></td>
-                                <td>True if update succeeded, false if validation failed</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>Basic Usage</h2>
-                    <p>Update a player's coins with error checking.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    <div class="info-section">
+                        <h2>Overview</h2>
+                        <div class="overview-grid">
+                            <div class="overview-item">
+                                <div class="overview-label">Execution Context</div>
+                                <div class="overview-value">de>Server</code></div>
+                            </div>
+                            <div class="overview-item">
+                                <div class="overview-label">Script Type</div>
+                                <div class="overview-value">Server Script</div>
+                            </div>
+                            <div class="overview-item">
+                                <div class="overview-label">Returns</div>
+                                <div class="overview-value">de>boolean</code></div>
+                            </div>
+                            <div class="overview-item">
+                                <div class="overview-label">Side Effects</div>
+                                <div class="overview-value">Updates leaderstats value, broadcasts to clients</div>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local success = _G.CLFF:Update(player, "Coins", 10000)
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Syntax</h2>
+                        <p>de>local success = _G.CLFF:Update(player: Player, statName: string, newValue: number)</code></p>
+
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>de>player</code></td>
+                                    <td>de>Player</code></td>
+                                    <td>The player instance whose stat should be updated</td>
+                                </tr>
+                                <tr>
+                                    <td>de>statName</code></td>
+                                    <td>de>string</code></td>
+                                    <td>The name of the stat (e.g., "Coins", "Kills")</td>
+                                </tr>
+                                <tr>
+                                    <td>de>newValue</code></td>
+                                    <td>de>number</code></td>
+                                    <td>The new value to set (validated against stat config)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>Use Cases</h2>
+                    <div class="use-case-grid">
+                        <!-- Use Case 1 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">1</div>
+                                <h3 class="use-case-title">Basic Usage with Error Checking</h3>
+                            </div>
+                            <p class="use-case-description">Update a player's coins and verify the operation succeeded.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local success = _G.CLFF:Update(player, "Coins", 10000)
 
 if success then
     print("Coins updated successfully")
 else
     warn("Failed to update coins")
 end</code></pre>
-                    </div>
-
-                    <h2>DataStore Integration</h2>
-                    <p>Load saved player data and update all stats.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local DataStoreService = game:GetService("DataStoreService")
+
+                        <!-- Use Case 2 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">2</div>
+                                <h3 class="use-case-title">DataStore Integration</h3>
+                            </div>
+                            <p class="use-case-description">Load saved player data and update all stats on join.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local DataStoreService = game:GetService("DataStoreService")
 local PlayerData = DataStoreService:GetDataStore("PlayerData")
 
 game.Players.PlayerAdded:Connect(function(player)
@@ -277,514 +282,573 @@ game.Players.PlayerAdded:Connect(function(player)
     if success and data then
         _G.CLFF:Update(player, "Coins", data.Coins or 0)
         _G.CLFF:Update(player, "Kills", data.Kills or 0)
-        _G.CLFF:Update(player, "Deaths", data.Deaths or 0)
         _G.CLFF:Update(player, "Level", data.Level or 1)
-        _G.CLFF:Update(player, "Wins", data.Wins or 0)
     end
 end)</code></pre>
-                    </div>
-
-                    <h2>Purchase System</h2>
-                    <p>Handle item purchases by deducting coins.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function handlePurchase(player, itemName, itemPrice)
+
+                        <!-- Use Case 3 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">3</div>
+                                <h3 class="use-case-title">Purchase System</h3>
+                            </div>
+                            <p class="use-case-description">Handle item purchases by deducting coins from player.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function handlePurchase(player, itemName, itemPrice)
     local currentCoins = _G.CLFF:Get(player, "Coins")
     
     if currentCoins >= itemPrice then
-        local newCoins = currentCoins - itemPrice
-        local success = _G.CLFF:Update(player, "Coins", newCoins)
+        local success = _G.CLFF:Update(player, "Coins", currentCoins - itemPrice)
         
         if success then
-            -- Give the item to player
             giveItem(player, itemName)
             return true, "Purchase successful!"
-        else
-            return false, "Failed to update coins"
         end
-    else
-        return false, "Not enough coins"
     end
-end
-
--- Usage
-local success, message = handlePurchase(player, "Sword", 500)
-print(message)</code></pre>
-                    </div>
-
-                    <h2>Quest Reward System</h2>
-                    <p>Award multiple stats when a quest is completed.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    return false, "Not enough coins"
+end</code></pre>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function completeQuest(player, questData)
-    -- Award coins
+
+                        <!-- Use Case 4 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">4</div>
+                                <h3 class="use-case-title">Quest Reward System</h3>
+                            </div>
+                            <p class="use-case-description">Award multiple stats when a quest is completed.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function completeQuest(player, questData)
     local currentCoins = _G.CLFF:Get(player, "Coins")
     _G.CLFF:Update(player, "Coins", currentCoins + questData.CoinReward)
     
-    -- Award XP and level up if needed
     local currentLevel = _G.CLFF:Get(player, "Level")
-    local newLevel = currentLevel + questData.LevelReward
-    _G.CLFF:Update(player, "Level", newLevel)
+    _G.CLFF:Update(player, "Level", currentLevel + questData.LevelReward)
     
-    -- Track quest completion
-    local currentWins = _G.CLFF:Get(player, "Wins")
-    _G.CLFF:Update(player, "Wins", currentWins + 1)
-    
-    print(player.Name .. " completed quest: " .. questData.Name)
-end
-
--- Example quest
-completeQuest(player, {
-    Name = "Defeat 10 Zombies",
-    CoinReward = 1000,
-    LevelReward = 2
-})</code></pre>
+    print(player.Name .. " completed: " .. questData.Name)
+end</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
+                <div class="section-divider"></div>
+
                 <!-- CLFF:Get -->
-                <section id="clff-get">
-                    <h1>CLFF:Get</h1>
-                    <p>
-                        The de>CLFF:Get</code> method retrieves the current value of a player's stat.
-                        Returns de>nil</code> if the stat or player doesn't exist.
-                    </p>
-
-                    <h2>Syntax</h2>
-                    <p>de>local value = _G.CLFF:Get(player: Player, statName: string)</code></p>
-
-                    <h2>Basic Usage</h2>
-                    <p>Get a player's current coin balance.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <section id="clff-get" class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-search"></i>
                         </div>
-                        <pre>de class="language-lua">local coins = _G.CLFF:Get(player, "Coins")
+                        <div class="api-method-title">
+                            <h1>CLFF:Get</h1>
+                            <p>Retrieve the current value of a player's stat</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Syntax</h2>
+                        <p>de>local value = _G.CLFF:Get(player: Player, statName: string)</code></p>
+                    </div>
+
+                    <h2>Use Cases</h2>
+                    <div class="use-case-grid">
+                        <!-- Use Case 1 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">1</div>
+                                <h3 class="use-case-title">Check Current Balance</h3>
+                            </div>
+                            <p class="use-case-description">Get a player's current coin balance.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local coins = _G.CLFF:Get(player, "Coins")
 
 if coins then
     print(player.Name .. " has " .. coins .. " coins")
 else
-    warn("Could not retrieve coins for " .. player.Name)
+    warn("Could not retrieve coins")
 end</code></pre>
-                    </div>
-
-                    <h2>Permission Check</h2>
-                    <p>Check if player has enough level to access an area.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local REQUIRED_LEVEL = 10
+
+                        <!-- Use Case 2 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">2</div>
+                                <h3 class="use-case-title">Permission Check</h3>
+                            </div>
+                            <p class="use-case-description">Check if player has required level to access an area.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local REQUIRED_LEVEL = 10
 
 local function canEnterArea(player)
-    local playerLevel = _G.CLFF:Get(player, "Level")
+    local level = _G.CLFF:Get(player, "Level")
     
-    if playerLevel and playerLevel >= REQUIRED_LEVEL then
+    if level and level >= REQUIRED_LEVEL then
         return true
     else
-        return false, "You need level " .. REQUIRED_LEVEL .. " to enter"
+        return false, "You need level " .. REQUIRED_LEVEL
     end
-end
-
--- Usage
-local canEnter, errorMsg = canEnterArea(player)
-if not canEnter then
-    print(errorMsg)
 end</code></pre>
-                    </div>
-
-                    <h2>Leaderboard Generation</h2>
-                    <p>Get all players' stats to create a custom leaderboard.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function getTopPlayers(statName, count)
+
+                        <!-- Use Case 3 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">3</div>
+                                <h3 class="use-case-title">Leaderboard Generation</h3>
+                            </div>
+                            <p class="use-case-description">Get all players' stats to create a custom leaderboard.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function getTopPlayers(statName, count)
     local playerStats = {}
     
     for _, player in ipairs(game.Players:GetPlayers()) do
         local value = _G.CLFF:Get(player, statName)
         if value then
-            table.insert(playerStats, {
-                Name = player.Name,
-                Value = value
-            })
+            table.insert(playerStats, {Name = player.Name, Value = value})
         end
     end
     
-    -- Sort by value descending
-    table.sort(playerStats, function(a, b)
-        return a.Value > b.Value
-    end)
-    
-    -- Return top N players
-    local topPlayers = {}
-    for i = 1, math.min(count, #playerStats) do
-        table.insert(topPlayers, playerStats[i])
-    end
-    
-    return topPlayers
-end
-
--- Get top 5 richest players
-local topRich = getTopPlayers("Coins", 5)
-for i, data in ipairs(topRich) do
-    print(i .. ". " .. data.Name .. " - " .. data.Value .. " coins")
+    table.sort(playerStats, function(a, b) return a.Value > b.Value end)
+    return playerStats
 end</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
+                <div class="section-divider"></div>
+
                 <!-- CLFF:Increment -->
-                <section id="clff-increment">
-                    <h1>CLFF:Increment</h1>
-                    <p>
-                        The de>CLFF:Increment</code> method adds or subtracts from a numeric stat. 
-                        Perfect for rewards, penalties, or continuous stat updates. Use negative values to decrement.
-                    </p>
-
-                    <h2>Syntax</h2>
-                    <p>de>local success = _G.CLFF:Increment(player: Player, statName: string, amount: number)</code></p>
-
-                    <h2>Basic Reward</h2>
-                    <p>Give players coins for completing an action.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <section id="clff-increment" class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-plus-circle"></i>
                         </div>
-                        <pre>de class="language-lua">-- Player defeats an enemy
+                        <div class="api-method-title">
+                            <h1>CLFF:Increment</h1>
+                            <p>Add or subtract from a numeric stat</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Syntax</h2>
+                        <p>de>local success = _G.CLFF:Increment(player: Player, statName: string, amount: number)</code></p>
+                    </div>
+
+                    <h2>Use Cases</h2>
+                    <div class="use-case-grid">
+                        <!-- Use Case 1 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">1</div>
+                                <h3 class="use-case-title">Basic Reward</h3>
+                            </div>
+                            <p class="use-case-description">Give players coins for completing an action.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">-- Player defeats an enemy
 _G.CLFF:Increment(player, "Coins", 100)
 _G.CLFF:Increment(player, "Kills", 1)
 
-print(player.Name .. " earned 100 coins and 1 kill!")</code></pre>
-                    </div>
-
-                    <h2>Combat System</h2>
-                    <p>Track kills and deaths in PvP combat.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+print(player.Name .. " earned 100 coins!")</code></pre>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function onPlayerKilled(killer, victim)
+
+                        <!-- Use Case 2 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">2</div>
+                                <h3 class="use-case-title">Combat System</h3>
+                            </div>
+                            <p class="use-case-description">Track kills and deaths in PvP combat.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function onPlayerKilled(killer, victim)
     -- Update killer stats
     _G.CLFF:Increment(killer, "Kills", 1)
-    _G.CLFF:Increment(killer, "Coins", 25) -- Bonus coins
+    _G.CLFF:Increment(killer, "Coins", 25)
     
     -- Update victim stats
     _G.CLFF:Increment(victim, "Deaths", 1)
-    
-    -- Notify players
-    print(killer.Name .. " eliminated " .. victim.Name)
-end
-
--- Connect to your death event
-game.Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(character)
-        local humanoid = character:WaitForChild("Humanoid")
-        humanoid.Died:Connect(function()
-            local killerPlayer = getKiller(player) -- Your kill detection
-            if killerPlayer then
-                onPlayerKilled(killerPlayer, player)
-            end
-        end)
-    end)
-end)</code></pre>
-                    </div>
-
-                    <h2>Penalty System</h2>
-                    <p>Deduct coins for penalties using negative increments.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+end</code></pre>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function applyDeathPenalty(player)
-    local currentCoins = _G.CLFF:Get(player, "Coins")
-    local penalty = math.floor(currentCoins * 0.1) -- 10% penalty
+
+                        <!-- Use Case 3 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">3</div>
+                                <h3 class="use-case-title">Penalty System</h3>
+                            </div>
+                            <p class="use-case-description">Deduct coins for penalties using negative increments.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function applyDeathPenalty(player)
+    local coins = _G.CLFF:Get(player, "Coins")
+    local penalty = math.floor(coins * 0.1) -- 10% penalty
     
-    -- Deduct coins (negative increment)
     _G.CLFF:Increment(player, "Coins", -penalty)
-    
     print(player.Name .. " lost " .. penalty .. " coins")
-end
-
--- Call on player death
-humanoid.Died:Connect(function()
-    applyDeathPenalty(player)
-end)</code></pre>
-                    </div>
-
-                    <h2>Daily Login Bonus</h2>
-                    <p>Reward players for logging in each day.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+end</code></pre>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function grantDailyBonus(player, dayStreak)
+
+                        <!-- Use Case 4 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">4</div>
+                                <h3 class="use-case-title">Daily Login Bonus</h3>
+                            </div>
+                            <p class="use-case-description">Reward players for logging in with streak bonuses.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function grantDailyBonus(player, dayStreak)
     local baseReward = 100
     local streakBonus = dayStreak * 50
     local totalReward = baseReward + streakBonus
     
-    -- Grant bonus coins
     _G.CLFF:Increment(player, "Coins", totalReward)
-    
-    -- Notify player
-    print(player.Name .. " claimed " .. totalReward .. " coins!")
-    print("Day " .. dayStreak .. " streak bonus!")
-end
-
--- Example: Player logs in on day 5 of streak
-grantDailyBonus(player, 5) -- Grants 100 + (5 * 50) = 350 coins</code></pre>
+    print("Day " .. dayStreak .. " bonus: " .. totalReward .. " coins!")
+end</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
+                <div class="section-divider"></div>
+
                 <!-- CLFF:Set -->
-                <section id="clff-set">
-                    <h1>CLFF:Set</h1>
-                    <p>
-                        The de>CLFF:Set</code> method is an alias for de>CLFF:Update</code>.
-                        Use it when you want clearer code that explicitly shows you're setting a value.
-                    </p>
-
-                    <h2>Syntax</h2>
-                    <p>de>local success = _G.CLFF:Set(player: Player, statName: string, value: number)</code></p>
-
-                    <h2>Basic Usage</h2>
-                    <p>Set a player's level to a specific value.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <section id="clff-set" class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-check-circle"></i>
                         </div>
-                        <pre>de class="language-lua">-- Reset player to level 1
+                        <div class="api-method-title">
+                            <h1>CLFF:Set</h1>
+                            <p>Alias for Update() - explicitly set a stat value</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Syntax</h2>
+                        <p>de>local success = _G.CLFF:Set(player: Player, statName: string, value: number)</code></p>
+                    </div>
+
+                    <h2>Use Cases</h2>
+                    <div class="use-case-grid">
+                        <!-- Use Case 1 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">1</div>
+                                <h3 class="use-case-title">Set Specific Level</h3>
+                            </div>
+                            <p class="use-case-description">Set a player's level to a specific value.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">-- Reset to level 1
 _G.CLFF:Set(player, "Level", 1)
 
 -- Set to max level
 _G.CLFF:Set(player, "Level", 100)</code></pre>
-                    </div>
-
-                    <h2>Admin Commands</h2>
-                    <p>Allow admins to set player stats directly.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function adminSetStat(admin, targetPlayer, statName, value)
+
+                        <!-- Use Case 2 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">2</div>
+                                <h3 class="use-case-title">Admin Commands</h3>
+                            </div>
+                            <p class="use-case-description">Allow admins to set player stats directly.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function adminSetStat(admin, target, stat, value)
     if not isAdmin(admin) then
-        return false, "You don't have permission"
+        return false, "No permission"
     end
     
-    local success = _G.CLFF:Set(targetPlayer, statName, value)
-    
-    if success then
-        return true, "Set " .. targetPlayer.Name .. "'s " .. statName .. " to " .. value
-    else
-        return false, "Failed to set stat"
-    end
-end
-
--- Example: Admin sets target's coins to 10000
-local success, msg = adminSetStat(adminPlayer, targetPlayer, "Coins", 10000)
-print(msg)</code></pre>
-                    </div>
-
-                    <h2>Reset Player Stats</h2>
-                    <p>Reset all stats to default values.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    local success = _G.CLFF:Set(target, stat, value)
+    return success, "Set " .. stat .. " to " .. value
+end</code></pre>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function resetPlayerStats(player)
+
+                        <!-- Use Case 3 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">3</div>
+                                <h3 class="use-case-title">Reset All Stats</h3>
+                            </div>
+                            <p class="use-case-description">Reset all player stats to default values.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function resetPlayerStats(player)
     _G.CLFF:Set(player, "Coins", 0)
     _G.CLFF:Set(player, "Kills", 0)
     _G.CLFF:Set(player, "Deaths", 0)
     _G.CLFF:Set(player, "Level", 1)
     _G.CLFF:Set(player, "Wins", 0)
-    
-    print(player.Name .. "'s stats have been reset")
-end
-
--- Usage
-resetPlayerStats(player)</code></pre>
+end</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
+                <div class="section-divider"></div>
+
                 <!-- CLFF:SetDebugMode -->
-                <section id="clff-setdebugmode">
-                    <h1>CLFF:SetDebugMode</h1>
-                    <p>
-                        The de>CLFF:SetDebugMode</code> method enables or disables debug warnings.
-                        Useful for troubleshooting during development.
-                    </p>
-
-                    <h2>Syntax</h2>
-                    <p>de>_G.CLFF:SetDebugMode(enabled: boolean)</code></p>
-
-                    <h2>Enable Debug Mode</h2>
-                    <p>Turn on debug warnings to see detailed logs.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <section id="clff-setdebugmode" class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-bug"></i>
                         </div>
-                        <pre>de class="language-lua">-- Enable debug mode
-_G.CLFF:SetDebugMode(true)
+                        <div class="api-method-title">
+                            <h1>CLFF:SetDebugMode</h1>
+                            <p>Enable or disable debug warnings for troubleshooting</p>
+                        </div>
+                    </div>
 
--- Now all operations will print debug info
+                    <div class="info-section">
+                        <h2>Syntax</h2>
+                        <p>de>_G.CLFF:SetDebugMode(enabled: boolean)</code></p>
+                    </div>
+
+                    <h2>Use Cases</h2>
+                    <div class="use-case-grid">
+                        <!-- Use Case 1 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">1</div>
+                                <h3 class="use-case-title">Enable Debug Mode</h3>
+                            </div>
+                            <p class="use-case-description">Turn on debug warnings during development.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">_G.CLFF:SetDebugMode(true)
+
+-- Now see detailed logs
 _G.CLFF:Update(player, "Coins", 1000)
--- Output: [CLFF Server] Stat updated: PlayerName - Coins = 1000</code></pre>
-                    </div>
-
-                    <h2>Disable Debug Mode</h2>
-                    <p>Turn off debug warnings for production.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+-- Output: [CLFF] Stat updated: PlayerName - Coins = 1000</code></pre>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">-- Disable debug mode before publishing game
+
+                        <!-- Use Case 2 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">2</div>
+                                <h3 class="use-case-title">Production Mode</h3>
+                            </div>
+                            <p class="use-case-description">Disable debug mode for production releases.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">-- Disable debug before publishing
 _G.CLFF:SetDebugMode(false)</code></pre>
-                    </div>
-
-                    <h2>Development Toggle</h2>
-                    <p>Automatically enable debug mode in Studio only.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local RunService = game:GetService("RunService")
 
--- Enable debug mode only in Studio
+                        <!-- Use Case 3 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">3</div>
+                                <h3 class="use-case-title">Auto-Toggle in Studio</h3>
+                            </div>
+                            <p class="use-case-description">Automatically enable debug mode only in Studio.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local RunService = game:GetService("RunService")
+
 if RunService:IsStudio() then
     _G.CLFF:SetDebugMode(true)
-    warn("[CLFF] Debug mode enabled (Studio)")
+    warn("[CLFF] Debug mode enabled")
 else
     _G.CLFF:SetDebugMode(false)
 end</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
+                <div class="section-divider"></div>
+
                 <!-- CLFF:SetSortingStat -->
-                <section id="clff-setsortingstat">
-                    <h1>CLFF:SetSortingStat</h1>
-                    <p>
-                        The de>CLFF:SetSortingStat</code> method changes which stat determines player order on the leaderboard.
-                        Updates take effect immediately for all players.
-                    </p>
-
-                    <h2>Syntax</h2>
-                    <p>de>local success = _G.CLFF:SetSortingStat(statName: string)</code></p>
-
-                    <h2>Basic Usage</h2>
-                    <p>Change sorting from Coins to Kills.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <section id="clff-setsortingstat" class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-sort-amount-down"></i>
                         </div>
-                        <pre>de class="language-lua">-- Sort by kills instead
-local success = _G.CLFF:SetSortingStat("Kills")
+                        <div class="api-method-title">
+                            <h1>CLFF:SetSortingStat</h1>
+                            <p>Change which stat determines player order on leaderboard</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Syntax</h2>
+                        <p>de>local success = _G.CLFF:SetSortingStat(statName: string)</code></p>
+                    </div>
+
+                    <h2>Use Cases</h2>
+                    <div class="use-case-grid">
+                        <!-- Use Case 1 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">1</div>
+                                <h3 class="use-case-title">Change Sort Order</h3>
+                            </div>
+                            <p class="use-case-description">Switch leaderboard sorting from Coins to Kills.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local success = _G.CLFF:SetSortingStat("Kills")
 
 if success then
     print("Leaderboard now sorted by Kills")
-else
-    warn("Invalid stat name")
 end</code></pre>
-                    </div>
-
-                    <h2>Event-Based Sorting</h2>
-                    <p>Change sorting based on game events.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function startPvPEvent()
-    -- During PvP events, sort by kills
+
+                        <!-- Use Case 2 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">2</div>
+                                <h3 class="use-case-title">Event-Based Sorting</h3>
+                            </div>
+                            <p class="use-case-description">Change sorting based on game events.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function startPvPEvent()
     _G.CLFF:SetSortingStat("Kills")
-    print("PvP Event Started! Leaderboard sorted by Kills")
+    print("PvP Event! Sorted by Kills")
 end
 
 local function endPvPEvent()
-    -- After event, sort by coins again
     _G.CLFF:SetSortingStat("Coins")
-    print("PvP Event Ended! Leaderboard sorted by Coins")
-end
-
--- Example: 10 minute PvP event
-startPvPEvent()
-task.wait(600) -- 10 minutes
-endPvPEvent()</code></pre>
-                    </div>
-
-                    <h2>Seasonal Leaderboard</h2>
-                    <p>Rotate sorting stat based on season or day of week.</p>
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    print("Event ended! Sorted by Coins")
+end</code></pre>
+                            </div>
                         </div>
-                        <pre>de class="language-lua">local function updateSeasonalSort()
+
+                        <!-- Use Case 3 -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-number">3</div>
+                                <h3 class="use-case-title">Seasonal Leaderboard</h3>
+                            </div>
+                            <p class="use-case-description">Rotate sorting based on day of week.</p>
+                            <div class="code-block-wrapper">
+                                <div class="code-block-header">
+                                    <span>Lua</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre>de class="language-lua">local function updateSeasonalSort()
     local dayOfWeek = os.date("*t").wday
     
     if dayOfWeek == 1 or dayOfWeek == 7 then
-        -- Weekend: Sort by wins
-        _G.CLFF:SetSortingStat("Wins")
-        print("Weekend Mode: Sorted by Wins")
+        _G.CLFF:SetSortingStat("Wins") -- Weekend
     else
-        -- Weekday: Sort by coins
-        _G.CLFF:SetSortingStat("Coins")
-        print("Weekday Mode: Sorted by Coins")
+        _G.CLFF:SetSortingStat("Coins") -- Weekday
     end
-end
-
--- Update every hour
-while true do
-    updateSeasonalSort()
-    task.wait(3600) -- 1 hour
 end</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
+                <div class="section-divider"></div>
+
                 <!-- Security Section -->
-                <section>
-                    <h1>Security & Validation</h1>
-                    <p>
-                        CLFF includes multiple layers of security to prevent exploits and ensure data integrity.
-                    </p>
-
-                    <h2>Built-In Security Features</h2>
-                    <ul>
-                        <li><strong>Server-Only Execution:</strong> API can only be called from server scripts</li>
-                        <li><strong>Type Validation:</strong> Checks value matches stat's ValueType (IntValue, NumberValue, etc.)</li>
-                        <li><strong>Sanity Checks:</strong> Rejects NaN, Infinity, and out-of-bounds values (-1e15 to 1e15)</li>
-                        <li><strong>Stat Name Validation:</strong> Only allows stats defined in CLFFConfig</li>
-                        <li><strong>Player Validation:</strong> Ensures player exists and has leaderstats</li>
-                        <li><strong>Rate Limiting:</strong> Throttles updates to prevent spam (configurable via UpdateThrottle)</li>
-                    </ul>
-
-                    <h2>Test Panel Security</h2>
-                    <p><strong>Important:</strong> Remove de>CLFFTestPanel.client.lua</code> before production! This test UI allows players to set their own stats.</p>
-
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>Files to Delete Before Release</span>
+                <section class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <pre>de>❌ DELETE THESE:
+                        <div class="api-method-title">
+                            <h1>Security & Validation</h1>
+                            <p>Built-in protection against exploits and data corruption</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Built-In Security Features</h2>
+                        <ul>
+                            <li><strong>Server-Only Execution:</strong> API can only be called from server scripts</li>
+                            <li><strong>Type Validation:</strong> Checks value matches stat's ValueType (IntValue, NumberValue, etc.)</li>
+                            <li><strong>Sanity Checks:</strong> Rejects NaN, Infinity, and out-of-bounds values (-1e15 to 1e15)</li>
+                            <li><strong>Stat Name Validation:</strong> Only allows stats defined in CLFFConfig</li>
+                            <li><strong>Player Validation:</strong> Ensures player exists and has leaderstats</li>
+                            <li><strong>Rate Limiting:</strong> Throttles updates to prevent spam (configurable via UpdateThrottle)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Test Panel Security</h2>
+                        <p><strong>Important:</strong> Remove de>CLFFTestPanel.client.lua</code> before production! This test UI allows players to set their own stats.</p>
+
+                        <div class="code-block-wrapper">
+                            <div class="code-block-header">
+                                <span>Files to Delete Before Release</span>
+                            </div>
+                            <pre>de>❌ DELETE THESE:
 - ServerScriptService/CLFF/TestCommands.server.lua
 - ServerScriptService/CLFF/CLFFBenchmark.server.lua  
 - StarterPlayerScripts/CLFF/CLFFTestPanel.client.lua
@@ -793,42 +857,53 @@ end</code></pre>
 - ReplicatedStorage/CLFF/CLFFConfig.lua
 - ServerScriptService/CLFF/CLFFServer.server.lua
 - StarterPlayerScripts/CLFF/CLFFClient.client.lua</code></pre>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Legacy API -->
-                <section>
-                    <h1>Legacy API Compatibility</h1>
-                    <p>
-                        For backwards compatibility, old method names are still supported:
-                    </p>
+                <div class="section-divider"></div>
 
-                    <table class="param-table">
-                        <thead>
-                            <tr>
-                                <th>New Method</th>
-                                <th>Legacy Alias</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>de>CLFF:Update()</code></td>
-                                <td>de>CLFF:UpdateStat()</code></td>
-                            </tr>
-                            <tr>
-                                <td>de>CLFF:Get()</code></td>
-                                <td>de>CLFF:GetStat()</code></td>
-                            </tr>
-                            <tr>
-                                <td>de>CLFF:Increment()</code></td>
-                                <td>de>CLFF:IncrementStat()</code></td>
-                            </tr>
-                            <tr>
-                                <td>de>CLFF:Set()</code></td>
-                                <td>de>CLFF:SetStat()</code></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- Legacy API -->
+                <section class="api-method-card">
+                    <div class="api-method-header">
+                        <div class="api-method-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="api-method-title">
+                            <h1>Legacy API Compatibility</h1>
+                            <p>Backwards compatible with old method names</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Supported Aliases</h2>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>New Method</th>
+                                    <th>Legacy Alias</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>de>CLFF:Update()</code></td>
+                                    <td>de>CLFF:UpdateStat()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>de>CLFF:Get()</code></td>
+                                    <td>de>CLFF:GetStat()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>de>CLFF:Increment()</code></td>
+                                    <td>de>CLFF:IncrementStat()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>de>CLFF:Set()</code></td>
+                                    <td>de>CLFF:SetStat()</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             </div>
         </main>
